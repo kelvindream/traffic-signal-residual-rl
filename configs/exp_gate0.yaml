@@ -1,0 +1,10 @@
+exp_id: gate0_ga_hdrl
+algo: ga_hdrl
+seed: 0
+eval_rng_seed: 2026
+episodes: 2
+max_steps: 120
+checkpoint_every: 1
+eval_episodes: 2
+metrics_sample_every: 10
+env_config: configs/env_gate0.yaml

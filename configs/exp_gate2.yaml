@@ -1,0 +1,10 @@
+exp_id: gate2_ablation
+algo: ga_hdrl
+seed: 0
+eval_rng_seed: 2026
+episodes: 50
+max_steps: 600
+checkpoint_every: 10
+eval_episodes: 5
+metrics_sample_every: 10
+env_config: configs/env_gate1_low.yaml

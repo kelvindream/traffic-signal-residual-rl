@@ -1,0 +1,2536 @@
+{
+  "protocol": {
+    "unit": "train seed (n=10 per scenario, 模型级；E12 全部 50 单元为 [2026, 2027, 2028, 2029, 2030, 2101, 2102, 2103, 2104, 2105])",
+    "within_seed_pairs": "eval seeds 2031-2050 × episodes 0-4 = 100 exact keys（CRN）",
+    "difference_definition": "A-B；throughput 正值有利 A，其余指标负值有利 A",
+    "tests": "精确符号翻转（双侧，枚举 2^n）+ Wilcoxon exact（零差显式降级 approx）",
+    "multiplicity": "Holm 校正，族 = 每（比较, 场景）5 指标",
+    "effect_size": "配对 Cliff's delta（seed 层）+ bootstrap CI",
+    "bootstrap_resamples": 10000,
+    "bootstrap_rng_seed": 42,
+    "claim_rule": "10/10 同号且 95% bootstrap CI 不跨 0 → 可写 p<0.05 显著声明；否则维持'方向一致 + 诚实披露'表述",
+    "safety_note": "安全率为副产物观察，95% 判据维持不变（Q7a）",
+    "preregistration": "预注册_E12_FMA3S基线补充实验.md（修订 1：FMA3S→CoLight）",
+    "partial": false
+  },
+  "data_completeness": {
+    "ctde": {
+      "low": {
+        "seeds_present": [
+          2026,
+          2027,
+          2028,
+          2029,
+          2030,
+          2101,
+          2102,
+          2103,
+          2104,
+          2105
+        ],
+        "seeds_missing": []
+      },
+      "medium": {
+        "seeds_present": [
+          2026,
+          2027,
+          2028,
+          2029,
+          2030,
+          2101,
+          2102,
+          2103,
+          2104,
+          2105
+        ],
+        "seeds_missing": []
+      },
+      "oversaturated": {
+        "seeds_present": [
+          2026,
+          2027,
+          2028,
+          2029,
+          2030,
+          2101,
+          2102,
+          2103,
+          2104,
+          2105
+        ],
+        "seeds_missing": []
+      },
+      "asymmetric": {
+        "seeds_present": [
+          2026,
+          2027,
+          2028,
+          2029,
+          2030,
+          2101,
+          2102,
+          2103,
+          2104,
+          2105
+        ],
+        "seeds_missing": []
+      },
+      "pulse": {
+        "seeds_present": [
+          2026,
+          2027,
+          2028,
+          2029,
+          2030,
+          2101,
+          2102,
+          2103,
+          2104,
+          2105
+        ],
+        "seeds_missing": []
+      }
+    },
+    "colight": {
+      "low": {
+        "seeds_present": [
+          2026,
+          2027,
+          2028,
+          2029,
+          2030,
+          2101,
+          2102,
+          2103,
+          2104,
+          2105
+        ],
+        "seeds_missing": []
+      },
+      "medium": {
+        "seeds_present": [
+          2026,
+          2027,
+          2028,
+          2029,
+          2030,
+          2101,
+          2102,
+          2103,
+          2104,
+          2105
+        ],
+        "seeds_missing": []
+      },
+      "oversaturated": {
+        "seeds_present": [
+          2026,
+          2027,
+          2028,
+          2029,
+          2030,
+          2101,
+          2102,
+          2103,
+          2104,
+          2105
+        ],
+        "seeds_missing": []
+      },
+      "asymmetric": {
+        "seeds_present": [
+          2026,
+          2027,
+          2028,
+          2029,
+          2030,
+          2101,
+          2102,
+          2103,
+          2104,
+          2105
+        ],
+        "seeds_missing": []
+      },
+      "pulse": {
+        "seeds_present": [
+          2026,
+          2027,
+          2028,
+          2029,
+          2030,
+          2101,
+          2102,
+          2103,
+          2104,
+          2105
+        ],
+        "seeds_missing": []
+      }
+    }
+  },
+  "comparisons": {
+    "ctde_vs_colight": {
+      "preregistered": true,
+      "low": {
+        "throughput": {
+          "mean": 1.225,
+          "std": 0.4593534103014318,
+          "n": 10,
+          "bootstrap_ci95": [
+            0.932,
+            1.4709999999999996
+          ],
+          "t_ci95": [
+            0.8963983656596946,
+            1.5536016343403056
+          ],
+          "sign_flip_exact_p": 0.001953125,
+          "wilcoxon": {
+            "stat": 0.0,
+            "p": 0.001953125,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": 1.0,
+          "positive_seeds": 10,
+          "negative_seeds": 0,
+          "zero_seeds": 0,
+          "same_sign_strict": true,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": 1.13,
+            "2027": 1.71,
+            "2028": 1.5,
+            "2029": 0.96,
+            "2030": 1.57,
+            "2101": 1.63,
+            "2102": 1.44,
+            "2103": 1.26,
+            "2104": 0.21,
+            "2105": 0.84
+          },
+          "claim_eligible_p<0.05": true,
+          "worst_train_seed": 2104,
+          "worst_train_seed_delta": 0.21,
+          "wilcoxon_holm_p": 0.009765625
+        },
+        "unfinished": {
+          "mean": -1.225,
+          "std": 0.4593534103014318,
+          "n": 10,
+          "bootstrap_ci95": [
+            -1.4709999999999996,
+            -0.932
+          ],
+          "t_ci95": [
+            -1.5536016343403056,
+            -0.8963983656596946
+          ],
+          "sign_flip_exact_p": 0.001953125,
+          "wilcoxon": {
+            "stat": 0.0,
+            "p": 0.001953125,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": -1.0,
+          "positive_seeds": 0,
+          "negative_seeds": 10,
+          "zero_seeds": 0,
+          "same_sign_strict": true,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": -1.13,
+            "2027": -1.71,
+            "2028": -1.5,
+            "2029": -0.96,
+            "2030": -1.57,
+            "2101": -1.63,
+            "2102": -1.44,
+            "2103": -1.26,
+            "2104": -0.21,
+            "2105": -0.84
+          },
+          "claim_eligible_p<0.05": true,
+          "worst_train_seed": 2104,
+          "worst_train_seed_delta": -0.21,
+          "wilcoxon_holm_p": 0.009765625
+        },
+        "co2_kg": {
+          "mean": -0.2366034256593632,
+          "std": 0.11055667202396324,
+          "n": 10,
+          "bootstrap_ci95": [
+            -0.2918549426526284,
+            -0.1638454126641259
+          ],
+          "t_ci95": [
+            -0.3156909044928391,
+            -0.15751594682588732
+          ],
+          "sign_flip_exact_p": 0.00390625,
+          "wilcoxon": {
+            "stat": 1.0,
+            "p": 0.00390625,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": -0.8,
+          "positive_seeds": 1,
+          "negative_seeds": 9,
+          "zero_seeds": 0,
+          "same_sign_strict": false,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": -0.2878871812914962,
+            "2027": -0.236940016409998,
+            "2028": -0.27261064840308824,
+            "2029": -0.291865761912113,
+            "2030": -0.29252634534620303,
+            "2101": -0.33458274379313074,
+            "2102": -0.2784070197123042,
+            "2103": -0.29108291305199224,
+            "2104": 0.024461219419550897,
+            "2105": -0.10459284609285734
+          },
+          "claim_eligible_p<0.05": false,
+          "worst_train_seed": 2104,
+          "worst_train_seed_delta": 0.024461219419550897,
+          "wilcoxon_holm_p": 0.009765625
+        },
+        "time_average_queue_vehicles": {
+          "mean": 0.38748666666666665,
+          "std": 0.10189018319788598,
+          "n": 10,
+          "bootstrap_ci95": [
+            0.32751550000000007,
+            0.4475138333333334
+          ],
+          "t_ci95": [
+            0.31459882046544274,
+            0.46037451286789055
+          ],
+          "sign_flip_exact_p": 0.001953125,
+          "wilcoxon": {
+            "stat": 0.0,
+            "p": 0.001953125,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": 1.0,
+          "positive_seeds": 10,
+          "negative_seeds": 0,
+          "zero_seeds": 0,
+          "same_sign_strict": true,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": 0.3218666666666667,
+            "2027": 0.4029666666666667,
+            "2028": 0.39490000000000003,
+            "2029": 0.2556666666666667,
+            "2030": 0.43793333333333334,
+            "2101": 0.2593333333333333,
+            "2102": 0.45943333333333336,
+            "2103": 0.2925666666666667,
+            "2104": 0.5104666666666666,
+            "2105": 0.5397333333333334
+          },
+          "claim_eligible_p<0.05": true,
+          "worst_train_seed": 2105,
+          "worst_train_seed_delta": 0.5397333333333334,
+          "wilcoxon_holm_p": 0.009765625
+        },
+        "total_waiting_increment_s": {
+          "mean": 116.24600000000001,
+          "std": 30.567054959365787,
+          "n": 10,
+          "bootstrap_ci95": [
+            98.25465,
+            134.25414999999998
+          ],
+          "t_ci95": [
+            94.37964613963284,
+            138.1123538603672
+          ],
+          "sign_flip_exact_p": 0.001953125,
+          "wilcoxon": {
+            "stat": 0.0,
+            "p": 0.001953125,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": 1.0,
+          "positive_seeds": 10,
+          "negative_seeds": 0,
+          "zero_seeds": 0,
+          "same_sign_strict": true,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": 96.56,
+            "2027": 120.89,
+            "2028": 118.47,
+            "2029": 76.7,
+            "2030": 131.38,
+            "2101": 77.8,
+            "2102": 137.83,
+            "2103": 87.77,
+            "2104": 153.14,
+            "2105": 161.92
+          },
+          "claim_eligible_p<0.05": true,
+          "worst_train_seed": 2105,
+          "worst_train_seed_delta": 161.92,
+          "wilcoxon_holm_p": 0.009765625
+        }
+      },
+      "medium": {
+        "throughput": {
+          "mean": 0.672,
+          "std": 0.5066403501937489,
+          "n": 10,
+          "bootstrap_ci95": [
+            0.39699999999999996,
+            0.9870000000000001
+          ],
+          "t_ci95": [
+            0.3095713266455058,
+            1.0344286733544943
+          ],
+          "sign_flip_exact_p": 0.001953125,
+          "wilcoxon": {
+            "stat": 0.0,
+            "p": 0.001953125,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": 1.0,
+          "positive_seeds": 10,
+          "negative_seeds": 0,
+          "zero_seeds": 0,
+          "same_sign_strict": true,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": 0.25,
+            "2027": 0.17,
+            "2028": 0.24,
+            "2029": 0.77,
+            "2030": 0.83,
+            "2101": 0.43,
+            "2102": 1.73,
+            "2103": 1.14,
+            "2104": 0.23,
+            "2105": 0.93
+          },
+          "claim_eligible_p<0.05": true,
+          "worst_train_seed": 2027,
+          "worst_train_seed_delta": 0.17,
+          "wilcoxon_holm_p": 0.009765625
+        },
+        "unfinished": {
+          "mean": -0.672,
+          "std": 0.5066403501937489,
+          "n": 10,
+          "bootstrap_ci95": [
+            -0.9870000000000001,
+            -0.39699999999999996
+          ],
+          "t_ci95": [
+            -1.0344286733544943,
+            -0.3095713266455058
+          ],
+          "sign_flip_exact_p": 0.001953125,
+          "wilcoxon": {
+            "stat": 0.0,
+            "p": 0.001953125,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": -1.0,
+          "positive_seeds": 0,
+          "negative_seeds": 10,
+          "zero_seeds": 0,
+          "same_sign_strict": true,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": -0.25,
+            "2027": -0.17,
+            "2028": -0.24,
+            "2029": -0.77,
+            "2030": -0.83,
+            "2101": -0.43,
+            "2102": -1.73,
+            "2103": -1.14,
+            "2104": -0.23,
+            "2105": -0.93
+          },
+          "claim_eligible_p<0.05": true,
+          "worst_train_seed": 2027,
+          "worst_train_seed_delta": -0.17,
+          "wilcoxon_holm_p": 0.009765625
+        },
+        "co2_kg": {
+          "mean": -0.7624975426145589,
+          "std": 0.284160415043702,
+          "n": 10,
+          "bootstrap_ci95": [
+            -0.9261752981094341,
+            -0.5976063432312099
+          ],
+          "t_ci95": [
+            -0.9657736579195615,
+            -0.5592214273095564
+          ],
+          "sign_flip_exact_p": 0.001953125,
+          "wilcoxon": {
+            "stat": 0.0,
+            "p": 0.001953125,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": -1.0,
+          "positive_seeds": 0,
+          "negative_seeds": 10,
+          "zero_seeds": 0,
+          "same_sign_strict": true,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": -0.6619621127814115,
+            "2027": -0.44758617579757987,
+            "2028": -0.26936935921463134,
+            "2029": -0.9677207744760834,
+            "2030": -0.9511340915425324,
+            "2101": -0.7535349330804065,
+            "2102": -1.1577905033492815,
+            "2103": -0.9560907537708137,
+            "2104": -0.5055824673755168,
+            "2105": -0.9542042547573323
+          },
+          "claim_eligible_p<0.05": true,
+          "worst_train_seed": 2028,
+          "worst_train_seed_delta": -0.26936935921463134,
+          "wilcoxon_holm_p": 0.009765625
+        },
+        "time_average_queue_vehicles": {
+          "mean": -0.17334333333333335,
+          "std": 0.1768463586852919,
+          "n": 10,
+          "bootstrap_ci95": [
+            -0.27734733333333333,
+            -0.07164941666666672
+          ],
+          "t_ci95": [
+            -0.29985159731462213,
+            -0.04683506935204457
+          ],
+          "sign_flip_exact_p": 0.017578125,
+          "wilcoxon": {
+            "stat": 5.0,
+            "p": 0.01953125,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": -0.8,
+          "positive_seeds": 1,
+          "negative_seeds": 9,
+          "zero_seeds": 0,
+          "same_sign_strict": false,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": -0.31073333333333325,
+            "2027": -0.09480000000000004,
+            "2028": 0.13053333333333333,
+            "2029": -0.0591,
+            "2030": -0.39960000000000007,
+            "2101": -0.2481666666666667,
+            "2102": -0.4221666666666667,
+            "2103": -0.2187333333333334,
+            "2104": -0.020566666666666643,
+            "2105": -0.09009999999999999
+          },
+          "claim_eligible_p<0.05": false,
+          "worst_train_seed": 2028,
+          "worst_train_seed_delta": 0.13053333333333333,
+          "wilcoxon_holm_p": 0.0390625
+        },
+        "total_waiting_increment_s": {
+          "mean": -52.000000000000014,
+          "std": 53.05350276424315,
+          "n": 10,
+          "bootstrap_ci95": [
+            -83.2012,
+            -21.493800000000014
+          ],
+          "t_ci95": [
+            -89.9521895883351,
+            -14.047810411664926
+          ],
+          "sign_flip_exact_p": 0.017578125,
+          "wilcoxon": {
+            "stat": 5.0,
+            "p": 0.01953125,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": -0.8,
+          "positive_seeds": 1,
+          "negative_seeds": 9,
+          "zero_seeds": 0,
+          "same_sign_strict": false,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": -93.22,
+            "2027": -28.43,
+            "2028": 39.16,
+            "2029": -17.73,
+            "2030": -119.87,
+            "2101": -74.45,
+            "2102": -126.65,
+            "2103": -65.62,
+            "2104": -6.17,
+            "2105": -27.02
+          },
+          "claim_eligible_p<0.05": false,
+          "worst_train_seed": 2028,
+          "worst_train_seed_delta": 39.16,
+          "wilcoxon_holm_p": 0.0390625
+        }
+      },
+      "oversaturated": {
+        "throughput": {
+          "mean": 0.143,
+          "std": 0.9596648720603805,
+          "n": 10,
+          "bootstrap_ci95": [
+            -0.389,
+            0.7300249999999997
+          ],
+          "t_ci95": [
+            -0.5435028936458475,
+            0.8295028936458475
+          ],
+          "sign_flip_exact_p": 0.6484375,
+          "wilcoxon": {
+            "stat": 26.0,
+            "p": 0.921875,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": 0.0,
+          "positive_seeds": 5,
+          "negative_seeds": 5,
+          "zero_seeds": 0,
+          "same_sign_strict": false,
+          "bootstrap_ci_excludes_zero": false,
+          "values_by_train_seed": {
+            "2026": -0.47,
+            "2027": -0.43,
+            "2028": 0.53,
+            "2029": 0.12,
+            "2030": 1.83,
+            "2101": 1.63,
+            "2102": -1.05,
+            "2103": -0.79,
+            "2104": -0.14,
+            "2105": 0.2
+          },
+          "claim_eligible_p<0.05": false,
+          "worst_train_seed": 2102,
+          "worst_train_seed_delta": -1.05,
+          "wilcoxon_holm_p": 1.0
+        },
+        "unfinished": {
+          "mean": -0.143,
+          "std": 0.9596648720603805,
+          "n": 10,
+          "bootstrap_ci95": [
+            -0.730025,
+            0.389
+          ],
+          "t_ci95": [
+            -0.8295028936458475,
+            0.5435028936458475
+          ],
+          "sign_flip_exact_p": 0.6484375,
+          "wilcoxon": {
+            "stat": 26.0,
+            "p": 0.921875,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": 0.0,
+          "positive_seeds": 5,
+          "negative_seeds": 5,
+          "zero_seeds": 0,
+          "same_sign_strict": false,
+          "bootstrap_ci_excludes_zero": false,
+          "values_by_train_seed": {
+            "2026": 0.47,
+            "2027": 0.43,
+            "2028": -0.53,
+            "2029": -0.12,
+            "2030": -1.83,
+            "2101": -1.63,
+            "2102": 1.05,
+            "2103": 0.79,
+            "2104": 0.14,
+            "2105": -0.2
+          },
+          "claim_eligible_p<0.05": false,
+          "worst_train_seed": 2102,
+          "worst_train_seed_delta": 1.05,
+          "wilcoxon_holm_p": 1.0
+        },
+        "co2_kg": {
+          "mean": -0.34337273790134415,
+          "std": 0.1875383906371583,
+          "n": 10,
+          "bootstrap_ci95": [
+            -0.4544752588461315,
+            -0.2345623823096009
+          ],
+          "t_ci95": [
+            -0.47752962077825956,
+            -0.20921585502442872
+          ],
+          "sign_flip_exact_p": 0.001953125,
+          "wilcoxon": {
+            "stat": 0.0,
+            "p": 0.001953125,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": -1.0,
+          "positive_seeds": 0,
+          "negative_seeds": 10,
+          "zero_seeds": 0,
+          "same_sign_strict": true,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": -0.31045721417229283,
+            "2027": -0.390260363599095,
+            "2028": -0.08216378935864821,
+            "2029": -0.34991786669351727,
+            "2030": -0.6772421778536633,
+            "2101": -0.3898545351428758,
+            "2102": -0.21029709807201155,
+            "2103": -0.09162911597295662,
+            "2104": -0.36541403471247835,
+            "2105": -0.5664911834359025
+          },
+          "claim_eligible_p<0.05": true,
+          "worst_train_seed": 2028,
+          "worst_train_seed_delta": -0.08216378935864821,
+          "wilcoxon_holm_p": 0.009765625
+        },
+        "time_average_queue_vehicles": {
+          "mean": -0.008843333333333332,
+          "std": 0.4633177871226158,
+          "n": 10,
+          "bootstrap_ci95": [
+            -0.2911225,
+            0.24320691666666658
+          ],
+          "t_ci95": [
+            -0.34028091201054284,
+            0.3225942453438762
+          ],
+          "sign_flip_exact_p": 0.951171875,
+          "wilcoxon": {
+            "stat": 25.0,
+            "p": 0.845703125,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": 0.2,
+          "positive_seeds": 6,
+          "negative_seeds": 4,
+          "zero_seeds": 0,
+          "same_sign_strict": false,
+          "bootstrap_ci_excludes_zero": false,
+          "values_by_train_seed": {
+            "2026": 0.15849999999999997,
+            "2027": -0.31683333333333324,
+            "2028": 0.17529999999999993,
+            "2029": 0.3045333333333335,
+            "2030": -0.5681333333333334,
+            "2101": -0.9324666666666666,
+            "2102": 0.33563333333333323,
+            "2103": 0.33663333333333334,
+            "2104": 0.5075333333333333,
+            "2105": -0.08913333333333336
+          },
+          "claim_eligible_p<0.05": false,
+          "worst_train_seed": 2104,
+          "worst_train_seed_delta": 0.5075333333333333,
+          "wilcoxon_holm_p": 1.0
+        },
+        "total_waiting_increment_s": {
+          "mean": -2.652999999999999,
+          "std": 138.99742899700618,
+          "n": 10,
+          "bootstrap_ci95": [
+            -87.33874999999999,
+            72.96307499999998
+          ],
+          "t_ci95": [
+            -102.0857707451755,
+            96.77977074517548
+          ],
+          "sign_flip_exact_p": 0.951171875,
+          "wilcoxon": {
+            "stat": 25.0,
+            "p": 0.845703125,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": 0.2,
+          "positive_seeds": 6,
+          "negative_seeds": 4,
+          "zero_seeds": 0,
+          "same_sign_strict": false,
+          "bootstrap_ci_excludes_zero": false,
+          "values_by_train_seed": {
+            "2026": 47.55,
+            "2027": -95.05,
+            "2028": 52.59,
+            "2029": 91.37,
+            "2030": -170.45,
+            "2101": -279.74,
+            "2102": 100.69,
+            "2103": 100.99,
+            "2104": 152.26,
+            "2105": -26.74
+          },
+          "claim_eligible_p<0.05": false,
+          "worst_train_seed": 2104,
+          "worst_train_seed_delta": 152.26,
+          "wilcoxon_holm_p": 1.0
+        }
+      },
+      "asymmetric": {
+        "throughput": {
+          "mean": -0.9339999999999999,
+          "std": 1.0280855995489868,
+          "n": 10,
+          "bootstrap_ci95": [
+            -1.523025,
+            -0.33397500000000035
+          ],
+          "t_ci95": [
+            -1.669448133566359,
+            -0.1985518664336411
+          ],
+          "sign_flip_exact_p": 0.02734375,
+          "wilcoxon": {
+            "stat": 7.0,
+            "p": 0.037109375,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": -0.6,
+          "positive_seeds": 2,
+          "negative_seeds": 8,
+          "zero_seeds": 0,
+          "same_sign_strict": false,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": -0.51,
+            "2027": -1.49,
+            "2028": -2.03,
+            "2029": -0.78,
+            "2030": 0.17,
+            "2101": -2.37,
+            "2102": -1.52,
+            "2103": -1.54,
+            "2104": -0.1,
+            "2105": 0.83
+          },
+          "claim_eligible_p<0.05": false,
+          "worst_train_seed": 2101,
+          "worst_train_seed_delta": -2.37,
+          "wilcoxon_holm_p": 0.111328125
+        },
+        "unfinished": {
+          "mean": 0.9339999999999999,
+          "std": 1.0280855995489868,
+          "n": 10,
+          "bootstrap_ci95": [
+            0.33397499999999997,
+            1.5230249999999999
+          ],
+          "t_ci95": [
+            0.1985518664336411,
+            1.669448133566359
+          ],
+          "sign_flip_exact_p": 0.02734375,
+          "wilcoxon": {
+            "stat": 7.0,
+            "p": 0.037109375,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": 0.6,
+          "positive_seeds": 8,
+          "negative_seeds": 2,
+          "zero_seeds": 0,
+          "same_sign_strict": false,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": 0.51,
+            "2027": 1.49,
+            "2028": 2.03,
+            "2029": 0.78,
+            "2030": -0.17,
+            "2101": 2.37,
+            "2102": 1.52,
+            "2103": 1.54,
+            "2104": 0.1,
+            "2105": -0.83
+          },
+          "claim_eligible_p<0.05": false,
+          "worst_train_seed": 2101,
+          "worst_train_seed_delta": 2.37,
+          "wilcoxon_holm_p": 0.111328125
+        },
+        "co2_kg": {
+          "mean": 0.17796802816868468,
+          "std": 0.26199670547831266,
+          "n": 10,
+          "bootstrap_ci95": [
+            0.024273780171465285,
+            0.3295461447655414
+          ],
+          "t_ci95": [
+            -0.009453124436788557,
+            0.36538918077415794
+          ],
+          "sign_flip_exact_p": 0.068359375,
+          "wilcoxon": {
+            "stat": 11.0,
+            "p": 0.10546875,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": 0.6,
+          "positive_seeds": 8,
+          "negative_seeds": 2,
+          "zero_seeds": 0,
+          "same_sign_strict": false,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": 0.022774692512657638,
+            "2027": 0.12822132443073067,
+            "2028": 0.42316246898795357,
+            "2029": 0.150921682379152,
+            "2030": -0.19095391303671602,
+            "2101": 0.5934550366016299,
+            "2102": 0.15869377970913448,
+            "2103": 0.3620454955257762,
+            "2104": 0.3504278233726491,
+            "2105": -0.21906810879612107
+          },
+          "claim_eligible_p<0.05": false,
+          "worst_train_seed": 2101,
+          "worst_train_seed_delta": 0.5934550366016299,
+          "wilcoxon_holm_p": 0.111328125
+        },
+        "time_average_queue_vehicles": {
+          "mean": 0.7396266666666668,
+          "std": 0.5580735744671294,
+          "n": 10,
+          "bootstrap_ci95": [
+            0.41581833333333335,
+            1.06931075
+          ],
+          "t_ci95": [
+            0.3404048811318718,
+            1.1388484522014617
+          ],
+          "sign_flip_exact_p": 0.00390625,
+          "wilcoxon": {
+            "stat": 1.0,
+            "p": 0.00390625,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": 0.8,
+          "positive_seeds": 9,
+          "negative_seeds": 1,
+          "zero_seeds": 0,
+          "same_sign_strict": false,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": 0.4715666666666667,
+            "2027": 0.19639999999999996,
+            "2028": 1.5190000000000001,
+            "2029": 0.8569999999999999,
+            "2030": -0.08476666666666663,
+            "2101": 1.5587666666666673,
+            "2102": 0.9726666666666667,
+            "2103": 0.9540333333333335,
+            "2104": 0.8110333333333334,
+            "2105": 0.14056666666666667
+          },
+          "claim_eligible_p<0.05": false,
+          "worst_train_seed": 2101,
+          "worst_train_seed_delta": 1.5587666666666673,
+          "wilcoxon_holm_p": 0.01953125
+        },
+        "total_waiting_increment_s": {
+          "mean": 221.88899999999998,
+          "std": 167.42362407643938,
+          "n": 10,
+          "bootstrap_ci95": [
+            124.7455,
+            320.79522499999996
+          ],
+          "t_ci95": [
+            102.12135429428263,
+            341.6566457057173
+          ],
+          "sign_flip_exact_p": 0.00390625,
+          "wilcoxon": {
+            "stat": 1.0,
+            "p": 0.00390625,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": 0.8,
+          "positive_seeds": 9,
+          "negative_seeds": 1,
+          "zero_seeds": 0,
+          "same_sign_strict": false,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": 141.47,
+            "2027": 58.92,
+            "2028": 455.71,
+            "2029": 257.1,
+            "2030": -25.43,
+            "2101": 467.63,
+            "2102": 291.8,
+            "2103": 286.21,
+            "2104": 243.31,
+            "2105": 42.17
+          },
+          "claim_eligible_p<0.05": false,
+          "worst_train_seed": 2101,
+          "worst_train_seed_delta": 467.63,
+          "wilcoxon_holm_p": 0.01953125
+        }
+      },
+      "pulse": {
+        "throughput": {
+          "mean": 0.38499999999999995,
+          "std": 0.2325821240861912,
+          "n": 10,
+          "bootstrap_ci95": [
+            0.24100000000000002,
+            0.511
+          ],
+          "t_ci95": [
+            0.21862077132961702,
+            0.5513792286703829
+          ],
+          "sign_flip_exact_p": 0.00390625,
+          "wilcoxon": {
+            "stat": 1.0,
+            "p": 0.00390625,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": 0.8,
+          "positive_seeds": 9,
+          "negative_seeds": 1,
+          "zero_seeds": 0,
+          "same_sign_strict": false,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": 0.27,
+            "2027": 0.62,
+            "2028": 0.45,
+            "2029": -0.11,
+            "2030": 0.39,
+            "2101": 0.49,
+            "2102": 0.18,
+            "2103": 0.35,
+            "2104": 0.7,
+            "2105": 0.51
+          },
+          "claim_eligible_p<0.05": false,
+          "worst_train_seed": 2029,
+          "worst_train_seed_delta": -0.11,
+          "wilcoxon_holm_p": 0.01953125
+        },
+        "unfinished": {
+          "mean": -0.38499999999999995,
+          "std": 0.2325821240861912,
+          "n": 10,
+          "bootstrap_ci95": [
+            -0.511,
+            -0.24100000000000002
+          ],
+          "t_ci95": [
+            -0.5513792286703829,
+            -0.21862077132961702
+          ],
+          "sign_flip_exact_p": 0.00390625,
+          "wilcoxon": {
+            "stat": 1.0,
+            "p": 0.00390625,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": -0.8,
+          "positive_seeds": 1,
+          "negative_seeds": 9,
+          "zero_seeds": 0,
+          "same_sign_strict": false,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": -0.27,
+            "2027": -0.62,
+            "2028": -0.45,
+            "2029": 0.11,
+            "2030": -0.39,
+            "2101": -0.49,
+            "2102": -0.18,
+            "2103": -0.35,
+            "2104": -0.7,
+            "2105": -0.51
+          },
+          "claim_eligible_p<0.05": false,
+          "worst_train_seed": 2029,
+          "worst_train_seed_delta": 0.11,
+          "wilcoxon_holm_p": 0.01953125
+        },
+        "co2_kg": {
+          "mean": -0.024275143230034178,
+          "std": 0.021207492435661127,
+          "n": 10,
+          "bootstrap_ci95": [
+            -0.036037791376457316,
+            -0.011339128972667985
+          ],
+          "t_ci95": [
+            -0.039446069402205,
+            -0.00910421705786336
+          ],
+          "sign_flip_exact_p": 0.01171875,
+          "wilcoxon": {
+            "stat": 4.0,
+            "p": 0.013671875,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": -0.6,
+          "positive_seeds": 2,
+          "negative_seeds": 8,
+          "zero_seeds": 0,
+          "same_sign_strict": false,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": -0.02744635647899126,
+            "2027": -0.008591561589276176,
+            "2028": 0.014022882171685435,
+            "2029": 0.003009614409128567,
+            "2030": -0.04844405717074638,
+            "2101": -0.02599751660590444,
+            "2102": -0.03209809529450281,
+            "2103": -0.03533732057933421,
+            "2104": -0.0296462604042613,
+            "2105": -0.05222276075813923
+          },
+          "claim_eligible_p<0.05": false,
+          "worst_train_seed": 2028,
+          "worst_train_seed_delta": 0.014022882171685435,
+          "wilcoxon_holm_p": 0.041015625
+        },
+        "time_average_queue_vehicles": {
+          "mean": -0.03550333333333334,
+          "std": 0.04148550378977406,
+          "n": 10,
+          "bootstrap_ci95": [
+            -0.06066683333333333,
+            -0.012116500000000006
+          ],
+          "t_ci95": [
+            -0.06518027496702039,
+            -0.005826391699646282
+          ],
+          "sign_flip_exact_p": 0.025390625,
+          "wilcoxon": {
+            "stat": 5.0,
+            "p": 0.01953125,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": -0.8,
+          "positive_seeds": 1,
+          "negative_seeds": 9,
+          "zero_seeds": 0,
+          "same_sign_strict": false,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": -0.05046666666666666,
+            "2027": -0.008600000000000003,
+            "2028": -0.014333333333333332,
+            "2029": 0.02623333333333333,
+            "2030": -0.06039999999999999,
+            "2101": -0.033633333333333335,
+            "2102": -0.01416666666666667,
+            "2103": -0.09570000000000001,
+            "2104": -0.0018000000000000004,
+            "2105": -0.10216666666666667
+          },
+          "claim_eligible_p<0.05": false,
+          "worst_train_seed": 2029,
+          "worst_train_seed_delta": 0.02623333333333333,
+          "wilcoxon_holm_p": 0.041015625
+        },
+        "total_waiting_increment_s": {
+          "mean": -10.651,
+          "std": 12.445651136932218,
+          "n": 10,
+          "bootstrap_ci95": [
+            -18.200049999999997,
+            -3.63495
+          ],
+          "t_ci95": [
+            -19.55408249010612,
+            -1.7479175098938828
+          ],
+          "sign_flip_exact_p": 0.025390625,
+          "wilcoxon": {
+            "stat": 5.0,
+            "p": 0.01953125,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": -0.8,
+          "positive_seeds": 1,
+          "negative_seeds": 9,
+          "zero_seeds": 0,
+          "same_sign_strict": false,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": -15.14,
+            "2027": -2.58,
+            "2028": -4.3,
+            "2029": 7.87,
+            "2030": -18.12,
+            "2101": -10.09,
+            "2102": -4.25,
+            "2103": -28.71,
+            "2104": -0.54,
+            "2105": -30.65
+          },
+          "claim_eligible_p<0.05": false,
+          "worst_train_seed": 2029,
+          "worst_train_seed_delta": 7.87,
+          "wilcoxon_holm_p": 0.041015625
+        }
+      }
+    },
+    "colight_vs_fixed_cycle": {
+      "preregistered": true,
+      "low": {
+        "throughput": {
+          "mean": -1.225,
+          "std": 0.4593534103014318,
+          "n": 10,
+          "bootstrap_ci95": [
+            -1.4709999999999996,
+            -0.932
+          ],
+          "t_ci95": [
+            -1.5536016343403056,
+            -0.8963983656596946
+          ],
+          "sign_flip_exact_p": 0.001953125,
+          "wilcoxon": {
+            "stat": 0.0,
+            "p": 0.001953125,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": -1.0,
+          "positive_seeds": 0,
+          "negative_seeds": 10,
+          "zero_seeds": 0,
+          "same_sign_strict": true,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": -1.13,
+            "2027": -1.71,
+            "2028": -1.5,
+            "2029": -0.96,
+            "2030": -1.57,
+            "2101": -1.63,
+            "2102": -1.44,
+            "2103": -1.26,
+            "2104": -0.21,
+            "2105": -0.84
+          },
+          "claim_eligible_p<0.05": true,
+          "worst_train_seed": 2027,
+          "worst_train_seed_delta": -1.71,
+          "wilcoxon_holm_p": 0.009765625
+        },
+        "unfinished": {
+          "mean": 1.225,
+          "std": 0.4593534103014318,
+          "n": 10,
+          "bootstrap_ci95": [
+            0.932,
+            1.4709999999999996
+          ],
+          "t_ci95": [
+            0.8963983656596946,
+            1.5536016343403056
+          ],
+          "sign_flip_exact_p": 0.001953125,
+          "wilcoxon": {
+            "stat": 0.0,
+            "p": 0.001953125,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": 1.0,
+          "positive_seeds": 10,
+          "negative_seeds": 0,
+          "zero_seeds": 0,
+          "same_sign_strict": true,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": 1.13,
+            "2027": 1.71,
+            "2028": 1.5,
+            "2029": 0.96,
+            "2030": 1.57,
+            "2101": 1.63,
+            "2102": 1.44,
+            "2103": 1.26,
+            "2104": 0.21,
+            "2105": 0.84
+          },
+          "claim_eligible_p<0.05": true,
+          "worst_train_seed": 2027,
+          "worst_train_seed_delta": 1.71,
+          "wilcoxon_holm_p": 0.009765625
+        },
+        "co2_kg": {
+          "mean": 0.23664929194914291,
+          "std": 0.11055555467380723,
+          "n": 10,
+          "bootstrap_ci95": [
+            0.1639149421015322,
+            0.29189375955447194
+          ],
+          "t_ci95": [
+            0.1575626124198175,
+            0.3157359714784683
+          ],
+          "sign_flip_exact_p": 0.00390625,
+          "wilcoxon": {
+            "stat": 1.0,
+            "p": 0.00390625,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": 0.8,
+          "positive_seeds": 9,
+          "negative_seeds": 1,
+          "zero_seeds": 0,
+          "same_sign_strict": false,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": 0.2878500470089493,
+            "2027": 0.23742124507406032,
+            "2028": 0.2726252169193698,
+            "2029": 0.291865761912113,
+            "2030": 0.29252634534620303,
+            "2101": 0.33458274379313074,
+            "2102": 0.2784070197123042,
+            "2103": 0.29108291305199224,
+            "2104": -0.024461219419550897,
+            "2105": 0.10459284609285734
+          },
+          "claim_eligible_p<0.05": false,
+          "worst_train_seed": 2101,
+          "worst_train_seed_delta": 0.33458274379313074,
+          "wilcoxon_holm_p": 0.009765625
+        },
+        "time_average_queue_vehicles": {
+          "mean": -0.3873566666666667,
+          "std": 0.10186318474997434,
+          "n": 10,
+          "bootstrap_ci95": [
+            -0.4473871666666667,
+            -0.3275186666666667
+          ],
+          "t_ci95": [
+            -0.4602251993417265,
+            -0.31448813399160686
+          ],
+          "sign_flip_exact_p": 0.001953125,
+          "wilcoxon": {
+            "stat": 0.0,
+            "p": 0.001953125,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": -1.0,
+          "positive_seeds": 0,
+          "negative_seeds": 10,
+          "zero_seeds": 0,
+          "same_sign_strict": true,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": -0.32196666666666673,
+            "2027": -0.40193333333333336,
+            "2028": -0.39453333333333335,
+            "2029": -0.2556666666666667,
+            "2030": -0.43793333333333334,
+            "2101": -0.2593333333333333,
+            "2102": -0.45943333333333336,
+            "2103": -0.2925666666666667,
+            "2104": -0.5104666666666666,
+            "2105": -0.5397333333333334
+          },
+          "claim_eligible_p<0.05": true,
+          "worst_train_seed": 2029,
+          "worst_train_seed_delta": -0.2556666666666667,
+          "wilcoxon_holm_p": 0.009765625
+        },
+        "total_waiting_increment_s": {
+          "mean": -116.207,
+          "std": 30.558955424992302,
+          "n": 10,
+          "bootstrap_ci95": [
+            -134.21615,
+            -98.25560000000002
+          ],
+          "t_ci95": [
+            -138.06755980251793,
+            -94.34644019748204
+          ],
+          "sign_flip_exact_p": 0.001953125,
+          "wilcoxon": {
+            "stat": 0.0,
+            "p": 0.001953125,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": -1.0,
+          "positive_seeds": 0,
+          "negative_seeds": 10,
+          "zero_seeds": 0,
+          "same_sign_strict": true,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": -96.59,
+            "2027": -120.58,
+            "2028": -118.36,
+            "2029": -76.7,
+            "2030": -131.38,
+            "2101": -77.8,
+            "2102": -137.83,
+            "2103": -87.77,
+            "2104": -153.14,
+            "2105": -161.92
+          },
+          "claim_eligible_p<0.05": true,
+          "worst_train_seed": 2029,
+          "worst_train_seed_delta": -76.7,
+          "wilcoxon_holm_p": 0.009765625
+        }
+      },
+      "medium": {
+        "throughput": {
+          "mean": -0.05,
+          "std": 0.5560175856531477,
+          "n": 10,
+          "bootstrap_ci95": [
+            -0.386,
+            0.255
+          ],
+          "t_ci95": [
+            -0.44775101973811476,
+            0.3477510197381148
+          ],
+          "sign_flip_exact_p": 0.7734375,
+          "wilcoxon": {
+            "stat": 23.0,
+            "p": 0.6953125,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": 0.2,
+          "positive_seeds": 6,
+          "negative_seeds": 4,
+          "zero_seeds": 0,
+          "same_sign_strict": false,
+          "bootstrap_ci_excludes_zero": false,
+          "values_by_train_seed": {
+            "2026": 0.3,
+            "2027": 0.58,
+            "2028": 0.54,
+            "2029": -0.6,
+            "2030": 0.07,
+            "2101": 0.31,
+            "2102": -0.92,
+            "2103": -0.42,
+            "2104": 0.34,
+            "2105": -0.7
+          },
+          "claim_eligible_p<0.05": false,
+          "worst_train_seed": 2102,
+          "worst_train_seed_delta": -0.92,
+          "wilcoxon_holm_p": 1.0
+        },
+        "unfinished": {
+          "mean": 0.05,
+          "std": 0.5560175856531477,
+          "n": 10,
+          "bootstrap_ci95": [
+            -0.255,
+            0.386
+          ],
+          "t_ci95": [
+            -0.3477510197381148,
+            0.44775101973811476
+          ],
+          "sign_flip_exact_p": 0.7734375,
+          "wilcoxon": {
+            "stat": 23.0,
+            "p": 0.6953125,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": -0.2,
+          "positive_seeds": 4,
+          "negative_seeds": 6,
+          "zero_seeds": 0,
+          "same_sign_strict": false,
+          "bootstrap_ci_excludes_zero": false,
+          "values_by_train_seed": {
+            "2026": -0.3,
+            "2027": -0.58,
+            "2028": -0.54,
+            "2029": 0.6,
+            "2030": -0.07,
+            "2101": -0.31,
+            "2102": 0.92,
+            "2103": 0.42,
+            "2104": -0.34,
+            "2105": 0.7
+          },
+          "claim_eligible_p<0.05": false,
+          "worst_train_seed": 2102,
+          "worst_train_seed_delta": 0.92,
+          "wilcoxon_holm_p": 1.0
+        },
+        "co2_kg": {
+          "mean": 0.6615525338933114,
+          "std": 0.30155682362944725,
+          "n": 10,
+          "bootstrap_ci95": [
+            0.4866572138534555,
+            0.8329535672829748
+          ],
+          "t_ci95": [
+            0.44583177756740855,
+            0.8772732902192142
+          ],
+          "sign_flip_exact_p": 0.001953125,
+          "wilcoxon": {
+            "stat": 0.0,
+            "p": 0.001953125,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": 1.0,
+          "positive_seeds": 10,
+          "negative_seeds": 0,
+          "zero_seeds": 0,
+          "same_sign_strict": true,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": 0.5605110788552387,
+            "2027": 0.3397851860639076,
+            "2028": 0.12466133101441448,
+            "2029": 0.9690487056322789,
+            "2030": 0.7994238293192686,
+            "2101": 0.6072093788823826,
+            "2102": 1.0147264628224721,
+            "2103": 0.8378238198373338,
+            "2104": 0.4134511118212521,
+            "2105": 0.9488844346845642
+          },
+          "claim_eligible_p<0.05": true,
+          "worst_train_seed": 2102,
+          "worst_train_seed_delta": 1.0147264628224721,
+          "wilcoxon_holm_p": 0.009765625
+        },
+        "time_average_queue_vehicles": {
+          "mean": -0.14684666666666668,
+          "std": 0.17834831449708355,
+          "n": 10,
+          "bootstrap_ci95": [
+            -0.25770150000000003,
+            -0.05453175000000003
+          ],
+          "t_ci95": [
+            -0.2744293651103834,
+            -0.019263968222949956
+          ],
+          "sign_flip_exact_p": 0.015625,
+          "wilcoxon": {
+            "stat": 5.0,
+            "p": 0.01953125,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": -0.6,
+          "positive_seeds": 2,
+          "negative_seeds": 8,
+          "zero_seeds": 0,
+          "same_sign_strict": false,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": -0.022800000000000077,
+            "2027": -0.25333333333333335,
+            "2028": -0.5610333333333334,
+            "2029": 0.005700000000000003,
+            "2030": -0.06396666666666667,
+            "2101": -0.1874,
+            "2102": -0.019333333333333324,
+            "2103": -0.15963333333333335,
+            "2104": -0.2375,
+            "2105": 0.030833333333333313
+          },
+          "claim_eligible_p<0.05": false,
+          "worst_train_seed": 2105,
+          "worst_train_seed_delta": 0.030833333333333313,
+          "wilcoxon_holm_p": 0.078125
+        },
+        "total_waiting_increment_s": {
+          "mean": -44.057,
+          "std": 53.50353468074174,
+          "n": 10,
+          "bootstrap_ci95": [
+            -77.31245,
+            -16.359650000000006
+          ],
+          "t_ci95": [
+            -82.33112302770957,
+            -5.782876972290438
+          ],
+          "sign_flip_exact_p": 0.015625,
+          "wilcoxon": {
+            "stat": 5.0,
+            "p": 0.01953125,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": -0.6,
+          "positive_seeds": 2,
+          "negative_seeds": 8,
+          "zero_seeds": 0,
+          "same_sign_strict": false,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": -6.84,
+            "2027": -76.01,
+            "2028": -168.31,
+            "2029": 1.71,
+            "2030": -19.2,
+            "2101": -56.22,
+            "2102": -5.8,
+            "2103": -47.89,
+            "2104": -71.25,
+            "2105": 9.24
+          },
+          "claim_eligible_p<0.05": false,
+          "worst_train_seed": 2105,
+          "worst_train_seed_delta": 9.24,
+          "wilcoxon_holm_p": 0.078125
+        }
+      },
+      "oversaturated": {
+        "throughput": {
+          "mean": 1.6580000000000001,
+          "std": 0.7271221813881534,
+          "n": 10,
+          "bootstrap_ci95": [
+            1.2269999999999999,
+            2.068
+          ],
+          "t_ci95": [
+            1.1378481260595303,
+            2.17815187394047
+          ],
+          "sign_flip_exact_p": 0.001953125,
+          "wilcoxon": {
+            "stat": 0.0,
+            "p": 0.001953125,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": 1.0,
+          "positive_seeds": 10,
+          "negative_seeds": 0,
+          "zero_seeds": 0,
+          "same_sign_strict": true,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": 1.79,
+            "2027": 2.42,
+            "2028": 1.7,
+            "2029": 1.32,
+            "2030": 0.88,
+            "2101": 0.28,
+            "2102": 2.7,
+            "2103": 2.31,
+            "2104": 1.49,
+            "2105": 1.69
+          },
+          "claim_eligible_p<0.05": true,
+          "worst_train_seed": 2101,
+          "worst_train_seed_delta": 0.28,
+          "wilcoxon_holm_p": 0.009765625
+        },
+        "unfinished": {
+          "mean": -1.6580000000000001,
+          "std": 0.7271221813881534,
+          "n": 10,
+          "bootstrap_ci95": [
+            -2.068,
+            -1.2269999999999999
+          ],
+          "t_ci95": [
+            -2.17815187394047,
+            -1.1378481260595303
+          ],
+          "sign_flip_exact_p": 0.001953125,
+          "wilcoxon": {
+            "stat": 0.0,
+            "p": 0.001953125,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": -1.0,
+          "positive_seeds": 0,
+          "negative_seeds": 10,
+          "zero_seeds": 0,
+          "same_sign_strict": true,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": -1.79,
+            "2027": -2.42,
+            "2028": -1.7,
+            "2029": -1.32,
+            "2030": -0.88,
+            "2101": -0.28,
+            "2102": -2.7,
+            "2103": -2.31,
+            "2104": -1.49,
+            "2105": -1.69
+          },
+          "claim_eligible_p<0.05": true,
+          "worst_train_seed": 2101,
+          "worst_train_seed_delta": -0.28,
+          "wilcoxon_holm_p": 0.009765625
+        },
+        "co2_kg": {
+          "mean": -0.10650068536391892,
+          "std": 0.16355846575032154,
+          "n": 10,
+          "bootstrap_ci95": [
+            -0.2076354651779495,
+            -0.016690618612268695
+          ],
+          "t_ci95": [
+            -0.22350336336837787,
+            0.010501992640540025
+          ],
+          "sign_flip_exact_p": 0.072265625,
+          "wilcoxon": {
+            "stat": 11.0,
+            "p": 0.10546875,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": -0.4,
+          "positive_seeds": 3,
+          "negative_seeds": 7,
+          "zero_seeds": 0,
+          "same_sign_strict": false,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": -0.13009000155440087,
+            "2027": -0.11936122507074966,
+            "2028": -0.357813764121221,
+            "2029": -0.03762866181545167,
+            "2030": 0.09663871078976875,
+            "2101": -0.008434107339692182,
+            "2102": -0.20497907933338508,
+            "2103": -0.37316563042230355,
+            "2104": 0.01987840807871766,
+            "2105": 0.04994849714952842
+          },
+          "claim_eligible_p<0.05": false,
+          "worst_train_seed": 2030,
+          "worst_train_seed_delta": 0.09663871078976875,
+          "wilcoxon_holm_p": 0.10546875
+        },
+        "time_average_queue_vehicles": {
+          "mean": -1.376396666666667,
+          "std": 0.34295467052809925,
+          "n": 10,
+          "bootstrap_ci95": [
+            -1.5373033333333335,
+            -1.1513553333333335
+          ],
+          "t_ci95": [
+            -1.6217316586638366,
+            -1.1310616746694973
+          ],
+          "sign_flip_exact_p": 0.001953125,
+          "wilcoxon": {
+            "stat": 0.0,
+            "p": 0.001953125,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": -1.0,
+          "positive_seeds": 0,
+          "negative_seeds": 10,
+          "zero_seeds": 0,
+          "same_sign_strict": true,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": -1.4229000000000003,
+            "2027": -1.2264000000000002,
+            "2028": -1.4932999999999998,
+            "2029": -1.5243333333333338,
+            "2030": -1.3538000000000006,
+            "2101": -0.4724999999999999,
+            "2102": -1.5916666666666668,
+            "2103": -1.6691333333333334,
+            "2104": -1.5936000000000003,
+            "2105": -1.4163333333333334
+          },
+          "claim_eligible_p<0.05": true,
+          "worst_train_seed": 2101,
+          "worst_train_seed_delta": -0.4724999999999999,
+          "wilcoxon_holm_p": 0.009765625
+        },
+        "total_waiting_increment_s": {
+          "mean": -412.921,
+          "std": 102.88639457079724,
+          "n": 10,
+          "bootstrap_ci95": [
+            -461.19300000000004,
+            -345.4076
+          ],
+          "t_ci95": [
+            -486.5214928866425,
+            -339.3205071133575
+          ],
+          "sign_flip_exact_p": 0.001953125,
+          "wilcoxon": {
+            "stat": 0.0,
+            "p": 0.001953125,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": -1.0,
+          "positive_seeds": 0,
+          "negative_seeds": 10,
+          "zero_seeds": 0,
+          "same_sign_strict": true,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": -426.87,
+            "2027": -367.93,
+            "2028": -447.99,
+            "2029": -457.31,
+            "2030": -406.14,
+            "2101": -141.75,
+            "2102": -477.5,
+            "2103": -500.74,
+            "2104": -478.08,
+            "2105": -424.9
+          },
+          "claim_eligible_p<0.05": true,
+          "worst_train_seed": 2101,
+          "worst_train_seed_delta": -141.75,
+          "wilcoxon_holm_p": 0.009765625
+        }
+      },
+      "asymmetric": {
+        "throughput": {
+          "mean": 1.7329999999999999,
+          "std": 0.4445984455413422,
+          "n": 10,
+          "bootstrap_ci95": [
+            1.4680000000000002,
+            1.984
+          ],
+          "t_ci95": [
+            1.4149534315981782,
+            2.0510465684018215
+          ],
+          "sign_flip_exact_p": 0.001953125,
+          "wilcoxon": {
+            "stat": 0.0,
+            "p": 0.001953125,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": 1.0,
+          "positive_seeds": 10,
+          "negative_seeds": 0,
+          "zero_seeds": 0,
+          "same_sign_strict": true,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": 1.31,
+            "2027": 1.9,
+            "2028": 1.82,
+            "2029": 1.14,
+            "2030": 1.72,
+            "2101": 2.16,
+            "2102": 1.96,
+            "2103": 2.23,
+            "2104": 2.12,
+            "2105": 0.97
+          },
+          "claim_eligible_p<0.05": true,
+          "worst_train_seed": 2105,
+          "worst_train_seed_delta": 0.97,
+          "wilcoxon_holm_p": 0.009765625
+        },
+        "unfinished": {
+          "mean": -1.7329999999999999,
+          "std": 0.4445984455413422,
+          "n": 10,
+          "bootstrap_ci95": [
+            -1.984,
+            -1.4680000000000002
+          ],
+          "t_ci95": [
+            -2.0510465684018215,
+            -1.4149534315981782
+          ],
+          "sign_flip_exact_p": 0.001953125,
+          "wilcoxon": {
+            "stat": 0.0,
+            "p": 0.001953125,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": -1.0,
+          "positive_seeds": 0,
+          "negative_seeds": 10,
+          "zero_seeds": 0,
+          "same_sign_strict": true,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": -1.31,
+            "2027": -1.9,
+            "2028": -1.82,
+            "2029": -1.14,
+            "2030": -1.72,
+            "2101": -2.16,
+            "2102": -1.96,
+            "2103": -2.23,
+            "2104": -2.12,
+            "2105": -0.97
+          },
+          "claim_eligible_p<0.05": true,
+          "worst_train_seed": 2105,
+          "worst_train_seed_delta": -0.97,
+          "wilcoxon_holm_p": 0.009765625
+        },
+        "co2_kg": {
+          "mean": -0.27798046909520957,
+          "std": 0.20328050897127087,
+          "n": 10,
+          "bootstrap_ci95": [
+            -0.40124526323590126,
+            -0.16405997790146545
+          ],
+          "t_ci95": [
+            -0.42339858503703987,
+            -0.1325623531533793
+          ],
+          "sign_flip_exact_p": 0.001953125,
+          "wilcoxon": {
+            "stat": 0.0,
+            "p": 0.001953125,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": -1.0,
+          "positive_seeds": 0,
+          "negative_seeds": 10,
+          "zero_seeds": 0,
+          "same_sign_strict": true,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": -0.11052717258472469,
+            "2027": -0.1616453269138482,
+            "2028": -0.3565422328452922,
+            "2029": -0.178246250876885,
+            "2030": -0.13255813324573334,
+            "2101": -0.5331856738122994,
+            "2102": -0.19334721197393756,
+            "2103": -0.5001451559867175,
+            "2104": -0.5981407684704341,
+            "2105": -0.015466764242224294
+          },
+          "claim_eligible_p<0.05": true,
+          "worst_train_seed": 2105,
+          "worst_train_seed_delta": -0.015466764242224294,
+          "wilcoxon_holm_p": 0.009765625
+        },
+        "time_average_queue_vehicles": {
+          "mean": -0.9664866666666667,
+          "std": 0.3923696415434537,
+          "n": 10,
+          "bootstrap_ci95": [
+            -1.19171,
+            -0.7313936666666666
+          ],
+          "t_ci95": [
+            -1.2471709994380105,
+            -0.685802333895323
+          ],
+          "sign_flip_exact_p": 0.001953125,
+          "wilcoxon": {
+            "stat": 0.0,
+            "p": 0.001953125,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": -1.0,
+          "positive_seeds": 0,
+          "negative_seeds": 10,
+          "zero_seeds": 0,
+          "same_sign_strict": true,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": -0.7095666666666667,
+            "2027": -0.27896666666666664,
+            "2028": -1.343666666666667,
+            "2029": -0.9127666666666667,
+            "2030": -0.6733666666666668,
+            "2101": -1.3902333333333334,
+            "2102": -1.0977666666666668,
+            "2103": -1.2804,
+            "2104": -1.3887333333333336,
+            "2105": -0.5893999999999999
+          },
+          "claim_eligible_p<0.05": true,
+          "worst_train_seed": 2027,
+          "worst_train_seed_delta": -0.27896666666666664,
+          "wilcoxon_holm_p": 0.009765625
+        },
+        "total_waiting_increment_s": {
+          "mean": -289.947,
+          "std": 117.71196059779896,
+          "n": 10,
+          "bootstrap_ci95": [
+            -357.515,
+            -219.41812500000003
+          ],
+          "t_ci95": [
+            -374.15306392898225,
+            -205.74093607101776
+          ],
+          "sign_flip_exact_p": 0.001953125,
+          "wilcoxon": {
+            "stat": 0.0,
+            "p": 0.001953125,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": -1.0,
+          "positive_seeds": 0,
+          "negative_seeds": 10,
+          "zero_seeds": 0,
+          "same_sign_strict": true,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": -212.87,
+            "2027": -83.69,
+            "2028": -403.11,
+            "2029": -273.83,
+            "2030": -202.01,
+            "2101": -417.07,
+            "2102": -329.33,
+            "2103": -384.12,
+            "2104": -416.62,
+            "2105": -176.82
+          },
+          "claim_eligible_p<0.05": true,
+          "worst_train_seed": 2027,
+          "worst_train_seed_delta": -83.69,
+          "wilcoxon_holm_p": 0.009765625
+        }
+      },
+      "pulse": {
+        "throughput": {
+          "mean": -0.38499999999999995,
+          "std": 0.2325821240861912,
+          "n": 10,
+          "bootstrap_ci95": [
+            -0.511,
+            -0.24100000000000002
+          ],
+          "t_ci95": [
+            -0.5513792286703829,
+            -0.21862077132961702
+          ],
+          "sign_flip_exact_p": 0.00390625,
+          "wilcoxon": {
+            "stat": 1.0,
+            "p": 0.00390625,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": -0.8,
+          "positive_seeds": 1,
+          "negative_seeds": 9,
+          "zero_seeds": 0,
+          "same_sign_strict": false,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": -0.27,
+            "2027": -0.62,
+            "2028": -0.45,
+            "2029": 0.11,
+            "2030": -0.39,
+            "2101": -0.49,
+            "2102": -0.18,
+            "2103": -0.35,
+            "2104": -0.7,
+            "2105": -0.51
+          },
+          "claim_eligible_p<0.05": false,
+          "worst_train_seed": 2104,
+          "worst_train_seed_delta": -0.7,
+          "wilcoxon_holm_p": 0.01953125
+        },
+        "unfinished": {
+          "mean": 0.38499999999999995,
+          "std": 0.2325821240861912,
+          "n": 10,
+          "bootstrap_ci95": [
+            0.24100000000000002,
+            0.511
+          ],
+          "t_ci95": [
+            0.21862077132961702,
+            0.5513792286703829
+          ],
+          "sign_flip_exact_p": 0.00390625,
+          "wilcoxon": {
+            "stat": 1.0,
+            "p": 0.00390625,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": 0.8,
+          "positive_seeds": 9,
+          "negative_seeds": 1,
+          "zero_seeds": 0,
+          "same_sign_strict": false,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": 0.27,
+            "2027": 0.62,
+            "2028": 0.45,
+            "2029": -0.11,
+            "2030": 0.39,
+            "2101": 0.49,
+            "2102": 0.18,
+            "2103": 0.35,
+            "2104": 0.7,
+            "2105": 0.51
+          },
+          "claim_eligible_p<0.05": false,
+          "worst_train_seed": 2104,
+          "worst_train_seed_delta": 0.7,
+          "wilcoxon_holm_p": 0.01953125
+        },
+        "co2_kg": {
+          "mean": 0.024275143230034178,
+          "std": 0.021207492435661127,
+          "n": 10,
+          "bootstrap_ci95": [
+            0.011339128972667981,
+            0.036037791376457316
+          ],
+          "t_ci95": [
+            0.00910421705786336,
+            0.039446069402205
+          ],
+          "sign_flip_exact_p": 0.01171875,
+          "wilcoxon": {
+            "stat": 4.0,
+            "p": 0.013671875,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": 0.6,
+          "positive_seeds": 8,
+          "negative_seeds": 2,
+          "zero_seeds": 0,
+          "same_sign_strict": false,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": 0.02744635647899126,
+            "2027": 0.008591561589276176,
+            "2028": -0.014022882171685435,
+            "2029": -0.003009614409128567,
+            "2030": 0.04844405717074638,
+            "2101": 0.02599751660590444,
+            "2102": 0.03209809529450281,
+            "2103": 0.03533732057933421,
+            "2104": 0.0296462604042613,
+            "2105": 0.05222276075813923
+          },
+          "claim_eligible_p<0.05": false,
+          "worst_train_seed": 2105,
+          "worst_train_seed_delta": 0.05222276075813923,
+          "wilcoxon_holm_p": 0.041015625
+        },
+        "time_average_queue_vehicles": {
+          "mean": 0.03550333333333334,
+          "std": 0.04148550378977406,
+          "n": 10,
+          "bootstrap_ci95": [
+            0.012116500000000002,
+            0.06066683333333332
+          ],
+          "t_ci95": [
+            0.005826391699646282,
+            0.06518027496702039
+          ],
+          "sign_flip_exact_p": 0.025390625,
+          "wilcoxon": {
+            "stat": 5.0,
+            "p": 0.01953125,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": 0.8,
+          "positive_seeds": 9,
+          "negative_seeds": 1,
+          "zero_seeds": 0,
+          "same_sign_strict": false,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": 0.05046666666666666,
+            "2027": 0.008600000000000003,
+            "2028": 0.014333333333333332,
+            "2029": -0.02623333333333333,
+            "2030": 0.06039999999999999,
+            "2101": 0.033633333333333335,
+            "2102": 0.01416666666666667,
+            "2103": 0.09570000000000001,
+            "2104": 0.0018000000000000004,
+            "2105": 0.10216666666666667
+          },
+          "claim_eligible_p<0.05": false,
+          "worst_train_seed": 2105,
+          "worst_train_seed_delta": 0.10216666666666667,
+          "wilcoxon_holm_p": 0.041015625
+        },
+        "total_waiting_increment_s": {
+          "mean": 10.651,
+          "std": 12.445651136932218,
+          "n": 10,
+          "bootstrap_ci95": [
+            3.6349499999999995,
+            18.200049999999994
+          ],
+          "t_ci95": [
+            1.7479175098938828,
+            19.55408249010612
+          ],
+          "sign_flip_exact_p": 0.025390625,
+          "wilcoxon": {
+            "stat": 5.0,
+            "p": 0.01953125,
+            "n": 10,
+            "zero_diffs": 0,
+            "method": "exact"
+          },
+          "cliffs_delta_paired": 0.8,
+          "positive_seeds": 9,
+          "negative_seeds": 1,
+          "zero_seeds": 0,
+          "same_sign_strict": false,
+          "bootstrap_ci_excludes_zero": true,
+          "values_by_train_seed": {
+            "2026": 15.14,
+            "2027": 2.58,
+            "2028": 4.3,
+            "2029": -7.87,
+            "2030": 18.12,
+            "2101": 10.09,
+            "2102": 4.25,
+            "2103": 28.71,
+            "2104": 0.54,
+            "2105": 30.65
+          },
+          "claim_eligible_p<0.05": false,
+          "worst_train_seed": 2105,
+          "worst_train_seed_delta": 30.65,
+          "wilcoxon_holm_p": 0.041015625
+        }
+      }
+    }
+  },
+  "safety_vs_fixed_cycle": {
+    "ctde": {
+      "low": {
+        "runs": 1000,
+        "safe": 1000,
+        "rate": 1.0,
+        "per_seed_rates": {
+          "2026": 1.0,
+          "2027": 1.0,
+          "2028": 1.0,
+          "2029": 1.0,
+          "2030": 1.0,
+          "2101": 1.0,
+          "2102": 1.0,
+          "2103": 1.0,
+          "2104": 1.0,
+          "2105": 1.0
+        },
+        "worst_seed_rate": 1.0
+      },
+      "medium": {
+        "runs": 1000,
+        "safe": 897,
+        "rate": 0.897,
+        "per_seed_rates": {
+          "2026": 0.86,
+          "2027": 0.87,
+          "2028": 0.9,
+          "2029": 0.95,
+          "2030": 0.88,
+          "2101": 0.88,
+          "2102": 0.9,
+          "2103": 0.9,
+          "2104": 0.86,
+          "2105": 0.97
+        },
+        "worst_seed_rate": 0.86
+      },
+      "oversaturated": {
+        "runs": 1000,
+        "safe": 897,
+        "rate": 0.897,
+        "per_seed_rates": {
+          "2026": 0.91,
+          "2027": 0.91,
+          "2028": 0.87,
+          "2029": 0.87,
+          "2030": 0.91,
+          "2101": 0.85,
+          "2102": 0.89,
+          "2103": 0.93,
+          "2104": 0.97,
+          "2105": 0.86
+        },
+        "worst_seed_rate": 0.85
+      },
+      "asymmetric": {
+        "runs": 1000,
+        "safe": 829,
+        "rate": 0.829,
+        "per_seed_rates": {
+          "2026": 0.68,
+          "2027": 0.92,
+          "2028": 0.85,
+          "2029": 0.96,
+          "2030": 0.82,
+          "2101": 0.85,
+          "2102": 0.86,
+          "2103": 0.71,
+          "2104": 0.85,
+          "2105": 0.79
+        },
+        "worst_seed_rate": 0.68
+      },
+      "pulse": {
+        "runs": 1000,
+        "safe": 1000,
+        "rate": 1.0,
+        "per_seed_rates": {
+          "2026": 1.0,
+          "2027": 1.0,
+          "2028": 1.0,
+          "2029": 1.0,
+          "2030": 1.0,
+          "2101": 1.0,
+          "2102": 1.0,
+          "2103": 1.0,
+          "2104": 1.0,
+          "2105": 1.0
+        },
+        "worst_seed_rate": 1.0
+      }
+    },
+    "colight": {
+      "low": {
+        "runs": 1000,
+        "safe": 514,
+        "rate": 0.514,
+        "per_seed_rates": {
+          "2026": 0.57,
+          "2027": 0.43,
+          "2028": 0.39,
+          "2029": 0.55,
+          "2030": 0.4,
+          "2101": 0.36,
+          "2102": 0.47,
+          "2103": 0.53,
+          "2104": 0.79,
+          "2105": 0.65
+        },
+        "worst_seed_rate": 0.36
+      },
+      "medium": {
+        "runs": 1000,
+        "safe": 300,
+        "rate": 0.30000000000000004,
+        "per_seed_rates": {
+          "2026": 0.34,
+          "2027": 0.54,
+          "2028": 0.77,
+          "2029": 0.05,
+          "2030": 0.18,
+          "2101": 0.32,
+          "2102": 0.01,
+          "2103": 0.13,
+          "2104": 0.56,
+          "2105": 0.1
+        },
+        "worst_seed_rate": 0.01
+      },
+      "oversaturated": {
+        "runs": 1000,
+        "safe": 735,
+        "rate": 0.735,
+        "per_seed_rates": {
+          "2026": 0.79,
+          "2027": 0.79,
+          "2028": 0.78,
+          "2029": 0.67,
+          "2030": 0.61,
+          "2101": 0.55,
+          "2102": 0.84,
+          "2103": 0.91,
+          "2104": 0.73,
+          "2105": 0.68
+        },
+        "worst_seed_rate": 0.55
+      },
+      "asymmetric": {
+        "runs": 1000,
+        "safe": 800,
+        "rate": 0.7999999999999999,
+        "per_seed_rates": {
+          "2026": 0.75,
+          "2027": 0.82,
+          "2028": 0.85,
+          "2029": 0.74,
+          "2030": 0.79,
+          "2101": 0.84,
+          "2102": 0.8,
+          "2103": 0.85,
+          "2104": 0.84,
+          "2105": 0.72
+        },
+        "worst_seed_rate": 0.72
+      },
+      "pulse": {
+        "runs": 1000,
+        "safe": 827,
+        "rate": 0.827,
+        "per_seed_rates": {
+          "2026": 0.87,
+          "2027": 0.72,
+          "2028": 0.84,
+          "2029": 0.94,
+          "2030": 0.74,
+          "2101": 0.76,
+          "2102": 0.93,
+          "2103": 0.91,
+          "2104": 0.71,
+          "2105": 0.85
+        },
+        "worst_seed_rate": 0.71
+      }
+    }
+  }
+}

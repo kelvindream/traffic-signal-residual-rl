@@ -1,0 +1,250 @@
+{
+  "generated_utc": "2026-11-11T05:54:16.328849+00:00",
+  "script": "tools/analyze_e13_n10_actuated.py",
+  "script_sha256": "3ab7cb3aaceb672841b40319317263ec369c0bacdcfc75b22a98bd929745d7e1",
+  "inputs": [
+    {
+      "path": "results/formal_v2/ctde_300/asymmetric_seed2026/eval_metrics.csv",
+      "sha256": "39952dcd39532ac5c4b8cac4715b9978814232272d1c31c0f1818f407121bdbb"
+    },
+    {
+      "path": "results/formal_v2/ctde_300/asymmetric_seed2027/eval_metrics.csv",
+      "sha256": "a88847c107cc4dbb68bb385cb0c701ecb80199832b29fdd83bc9ca5c5f806a9c"
+    },
+    {
+      "path": "results/formal_v2/ctde_300/asymmetric_seed2028/eval_metrics.csv",
+      "sha256": "fe14d55ef8c6f39e6b80ac637cd47e768697c699dbd8aa0121c895f28e12ed27"
+    },
+    {
+      "path": "results/formal_v2/ctde_300/asymmetric_seed2029/eval_metrics.csv",
+      "sha256": "70cebd8e922750896ac0da5529f999f419edb8da2d1fc50422c0ad38b860d601"
+    },
+    {
+      "path": "results/formal_v2/ctde_300/asymmetric_seed2030/eval_metrics.csv",
+      "sha256": "663105af4cf234040eece5e70385c97e41b830350f69f4c623937b9d9efc57ba"
+    },
+    {
+      "path": "results/formal_v2/ctde_300/low_seed2026/eval_metrics.csv",
+      "sha256": "e9f614b8b89db45d851d3b3d93016f7fde48b01bd4f80d52241c242e9adc3d31"
+    },
+    {
+      "path": "results/formal_v2/ctde_300/low_seed2027/eval_metrics.csv",
+      "sha256": "7b55b1be2f613656732696596850cc681a336a17554c1ab0cf4641c569cff33b"
+    },
+    {
+      "path": "results/formal_v2/ctde_300/low_seed2028/eval_metrics.csv",
+      "sha256": "134d677cef9e3730d2274d765e93414bcd2cde4fa1092b1f8d650401ec7a8e8c"
+    },
+    {
+      "path": "results/formal_v2/ctde_300/low_seed2029/eval_metrics.csv",
+      "sha256": "db23c24fae057205b3fe3188224973ed7fa1b477e047e41732421074541b7144"
+    },
+    {
+      "path": "results/formal_v2/ctde_300/low_seed2030/eval_metrics.csv",
+      "sha256": "bc6fd438a48ead4fe6f001739c38b4b1048eea86edac4c28b9d90ea74a70bb43"
+    },
+    {
+      "path": "results/formal_v2/ctde_300/medium_seed2026/eval_metrics.csv",
+      "sha256": "1631c034300c001740b9db811181a32b0252fbe785544219575a6106de80da45"
+    },
+    {
+      "path": "results/formal_v2/ctde_300/medium_seed2027/eval_metrics.csv",
+      "sha256": "8e55873b63cbceef4b961fad82b2b1e013dff165085b25111da0d452bb7de849"
+    },
+    {
+      "path": "results/formal_v2/ctde_300/medium_seed2028/eval_metrics.csv",
+      "sha256": "7a1eef5f7f5f54cf3b9718c0074e78be715f23a2e9b4f9080e059199e6e87267"
+    },
+    {
+      "path": "results/formal_v2/ctde_300/medium_seed2029/eval_metrics.csv",
+      "sha256": "bc3795a250c7e10efe4c2eeb638ea7c590ee531f29cd430d1d501bbb041dffe2"
+    },
+    {
+      "path": "results/formal_v2/ctde_300/medium_seed2030/eval_metrics.csv",
+      "sha256": "129c88b5872b2207a4a67f98f88335817689defccd476206e93d08298d043e78"
+    },
+    {
+      "path": "results/formal_v2/ctde_300/oversaturated_seed2026/eval_metrics.csv",
+      "sha256": "fae25f8f0b11e10359882845cc59dd7bdee84bba0f0a30372b93d4525587e818"
+    },
+    {
+      "path": "results/formal_v2/ctde_300/oversaturated_seed2027/eval_metrics.csv",
+      "sha256": "9e510a072bb6095d569ce1471e5d3be6192900c4a8feb33a28113e30eefa569d"
+    },
+    {
+      "path": "results/formal_v2/ctde_300/oversaturated_seed2028/eval_metrics.csv",
+      "sha256": "9ca96c6c9b6227eb76fc54ba0f2717758ad050e02561f8b8ed71b9b8f7328467"
+    },
+    {
+      "path": "results/formal_v2/ctde_300/oversaturated_seed2029/eval_metrics.csv",
+      "sha256": "47d451866cd2afe77ecf89efb12b39657bffba16e6163cf573b34ce064fea558"
+    },
+    {
+      "path": "results/formal_v2/ctde_300/oversaturated_seed2030/eval_metrics.csv",
+      "sha256": "45c2148471767fdf92f65af21ba76897ef39743889c853982cc2a12c64934802"
+    },
+    {
+      "path": "results/formal_v2/ctde_300/pulse_seed2026/eval_metrics.csv",
+      "sha256": "637fbca26f63d18343d62f66906964278f535ad23851f8f97dcf614dd56bf1dc"
+    },
+    {
+      "path": "results/formal_v2/ctde_300/pulse_seed2027/eval_metrics.csv",
+      "sha256": "637fbca26f63d18343d62f66906964278f535ad23851f8f97dcf614dd56bf1dc"
+    },
+    {
+      "path": "results/formal_v2/ctde_300/pulse_seed2028/eval_metrics.csv",
+      "sha256": "637fbca26f63d18343d62f66906964278f535ad23851f8f97dcf614dd56bf1dc"
+    },
+    {
+      "path": "results/formal_v2/ctde_300/pulse_seed2029/eval_metrics.csv",
+      "sha256": "637fbca26f63d18343d62f66906964278f535ad23851f8f97dcf614dd56bf1dc"
+    },
+    {
+      "path": "results/formal_v2/ctde_300/pulse_seed2030/eval_metrics.csv",
+      "sha256": "637fbca26f63d18343d62f66906964278f535ad23851f8f97dcf614dd56bf1dc"
+    },
+    {
+      "path": "results/formal_v2/ctde_300_n10/asymmetric_seed2101/eval_metrics.csv",
+      "sha256": "2d1fa4dbc26de102d44e3f613650695eaf92a44ed20ef5e4a862954a2024077a"
+    },
+    {
+      "path": "results/formal_v2/ctde_300_n10/asymmetric_seed2102/eval_metrics.csv",
+      "sha256": "a7086c59d8f831f23f35fbf25c6ef238e2440bb07ed26bfdec2ac47adbb93100"
+    },
+    {
+      "path": "results/formal_v2/ctde_300_n10/asymmetric_seed2103/eval_metrics.csv",
+      "sha256": "ccd63a6b0d7fe61e5fa2cfa3daf5e16955bc3cf4f5e438560ca859ecb8ad02a0"
+    },
+    {
+      "path": "results/formal_v2/ctde_300_n10/asymmetric_seed2104/eval_metrics.csv",
+      "sha256": "024b13f021e577a39f53a534bc45fa8da9add3f93f4c33b3c4be68693c5369bb"
+    },
+    {
+      "path": "results/formal_v2/ctde_300_n10/asymmetric_seed2105/eval_metrics.csv",
+      "sha256": "72453aa62d825563115e5c98da2d8d8170a23a863d2a4d89a1af5f9a9fe68ae6"
+    },
+    {
+      "path": "results/formal_v2/ctde_300_n10/low_seed2101/eval_metrics.csv",
+      "sha256": "8cd4a888f5245d7c7c408ae7143742a4ac5d65b5406983a8d8994287154d59de"
+    },
+    {
+      "path": "results/formal_v2/ctde_300_n10/low_seed2102/eval_metrics.csv",
+      "sha256": "a3af34042af112110a38ea0906ac857e1730473a6a8a17d5192e612b6d3101c1"
+    },
+    {
+      "path": "results/formal_v2/ctde_300_n10/low_seed2103/eval_metrics.csv",
+      "sha256": "6c060b460877652fb1205cce14b49f52c6bec9ba00aaae365594abe05eff7f12"
+    },
+    {
+      "path": "results/formal_v2/ctde_300_n10/low_seed2104/eval_metrics.csv",
+      "sha256": "5f7d5b33c2a94e21196d0500a7652f6005feea3117947e5d0038edbe23041cdc"
+    },
+    {
+      "path": "results/formal_v2/ctde_300_n10/low_seed2105/eval_metrics.csv",
+      "sha256": "7ecac5e968d6a6e55f7081eef7495e8b6c1c8d0688b63b69ee68afb680b7bb08"
+    },
+    {
+      "path": "results/formal_v2/ctde_300_n10/medium_seed2101/eval_metrics.csv",
+      "sha256": "ccc3e3a5f8af6fcf8d7e4de44d1c07bbe9e73093258305081db128c64e17d17d"
+    },
+    {
+      "path": "results/formal_v2/ctde_300_n10/medium_seed2102/eval_metrics.csv",
+      "sha256": "83e75596c43a28ec635fee959b4d4f2804d521a0926432e169c47f8acfa3e893"
+    },
+    {
+      "path": "results/formal_v2/ctde_300_n10/medium_seed2103/eval_metrics.csv",
+      "sha256": "4ed1c6e1f35ee25239095422a58c2f49e7a185a09397a1302dae3180ea3586c0"
+    },
+    {
+      "path": "results/formal_v2/ctde_300_n10/medium_seed2104/eval_metrics.csv",
+      "sha256": "96cda332adc6ac27da6ff63c19d5c9ced348cc68c7818b4924f14ac14658bdc8"
+    },
+    {
+      "path": "results/formal_v2/ctde_300_n10/medium_seed2105/eval_metrics.csv",
+      "sha256": "688121cd7409804d48585c7fb7d78826e1b8ba217716106506891f888ac9f754"
+    },
+    {
+      "path": "results/formal_v2/ctde_300_n10/oversaturated_seed2101/eval_metrics.csv",
+      "sha256": "f2111e052404a3b59574fc8e11d6fc15267857eba44c9a6daf2e8326902a893c"
+    },
+    {
+      "path": "results/formal_v2/ctde_300_n10/oversaturated_seed2102/eval_metrics.csv",
+      "sha256": "97e47d56c807af2ce3af91e13749cfc70040a19522ad9d22223116e8284a5001"
+    },
+    {
+      "path": "results/formal_v2/ctde_300_n10/oversaturated_seed2103/eval_metrics.csv",
+      "sha256": "f5646cfc7474179f93b36f7a2cd7ea2d95234efc52c718622e9d245c148adacf"
+    },
+    {
+      "path": "results/formal_v2/ctde_300_n10/oversaturated_seed2104/eval_metrics.csv",
+      "sha256": "30700e7750317862f4bc63682f6db498d60043e231265541ce7f93c6fe812d15"
+    },
+    {
+      "path": "results/formal_v2/ctde_300_n10/oversaturated_seed2105/eval_metrics.csv",
+      "sha256": "ed34a806da93edf36cc2017c37117789183d168efc308744e985b80a146cda61"
+    },
+    {
+      "path": "results/formal_v2/ctde_300_n10/pulse_seed2101/eval_metrics.csv",
+      "sha256": "637fbca26f63d18343d62f66906964278f535ad23851f8f97dcf614dd56bf1dc"
+    },
+    {
+      "path": "results/formal_v2/ctde_300_n10/pulse_seed2102/eval_metrics.csv",
+      "sha256": "637fbca26f63d18343d62f66906964278f535ad23851f8f97dcf614dd56bf1dc"
+    },
+    {
+      "path": "results/formal_v2/ctde_300_n10/pulse_seed2103/eval_metrics.csv",
+      "sha256": "637fbca26f63d18343d62f66906964278f535ad23851f8f97dcf614dd56bf1dc"
+    },
+    {
+      "path": "results/formal_v2/ctde_300_n10/pulse_seed2104/eval_metrics.csv",
+      "sha256": "637fbca26f63d18343d62f66906964278f535ad23851f8f97dcf614dd56bf1dc"
+    },
+    {
+      "path": "results/formal_v2/ctde_300_n10/pulse_seed2105/eval_metrics.csv",
+      "sha256": "637fbca26f63d18343d62f66906964278f535ad23851f8f97dcf614dd56bf1dc"
+    },
+    {
+      "path": "results/formal_v2/rule_baselines/all_metrics.csv",
+      "sha256": "695984887bb393f515b3337ed14de8c9ee6a95700c2a8172fc04d37c4112bb50"
+    }
+  ],
+  "protocol": {
+    "analysis": "post-hoc n=10 fixed-prior framework vs actuated controller",
+    "inference_unit": "training seed (n=10 per scenario)",
+    "within_seed_reduction": "mean of 100 exact CRN evaluation keys",
+    "metrics": [
+      "throughput",
+      "unfinished",
+      "co2_kg",
+      "time_average_queue_vehicles",
+      "total_waiting_increment_s"
+    ],
+    "scenarios": [
+      "low",
+      "medium",
+      "oversaturated",
+      "asymmetric",
+      "pulse"
+    ],
+    "effect_orientation": "positive always favors framework; raw framework-actuated also retained",
+    "test": "two-sided paired Wilcoxon signed-rank on 10 training-seed means",
+    "holm_family": "all 5 scenarios x 5 metrics = 25 tests",
+    "bootstrap": {
+      "seed_level_resamples": 50000,
+      "hierarchical_resamples": 50000,
+      "percentile_ci": 0.95,
+      "seed_rng": 20261111,
+      "hierarchical_rng": 20261112,
+      "hierarchy": "resample training seeds and shared CRN episode keys"
+    },
+    "claim_rule": "Holm p<0.05 and both 95% CIs exclude zero",
+    "safety": "descriptive engineering audit versus fixed-cycle tolerances; no proportion test"
+  },
+  "output_files": [
+    "seed_level_differences.csv",
+    "episode_level_differences.csv",
+    "statistics.json",
+    "statistics.md",
+    "safety_summary.csv"
+  ]
+}

@@ -1,0 +1,24 @@
+# Gate 2 消融变体：No-freeze（关闭 Master 冻结）
+# 只改变：master_freeze_episodes=0
+gamma: 0.99
+lr: 0.0003
+batch_size: 64
+buffer_size: 50000
+tau: 0.005
+alpha: 0.2
+automatic_entropy_tuning: true
+target_entropy_ratio: 0.5
+use_shared_network: false
+intrinsic_beta: 0.2
+use_intrinsic_reward: true
+goal_noise_max: 0.5
+goal_noise_min: 0.05
+goal_noise_decay_steps: 2000
+goal_dim: 8
+goal_hold_steps: 5
+master_freeze_episodes: 0
+lr_master_ratio: 0.1
+learn_frequency: 8
+master_update_interval: 4
+pretrain_episodes: 0
+pretrain_epochs: 20

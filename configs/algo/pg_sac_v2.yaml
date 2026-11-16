@@ -1,0 +1,17 @@
+gamma: 0.99
+lr: 0.0003
+batch_size: 64
+buffer_size: 50000
+tau: 0.005
+alpha: 0.2
+automatic_entropy_tuning: true
+target_entropy_ratio: 0.3
+pressure_prior_scale: 3.0
+pressure_reward_weight: 0.2
+reduction_reward_weight: 1.0
+external_reward_weight: 0.2
+max_consecutive_holds: 2
+starvation_limit: 4
+learn_frequency: 1
+pretrain_episodes: 10
+pretrain_epochs: 30

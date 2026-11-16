@@ -1,0 +1,911 @@
+{
+  "protocol": {
+    "analysis": "post-hoc n=10 fixed-prior framework vs actuated controller",
+    "inference_unit": "training seed (n=10 per scenario)",
+    "within_seed_reduction": "mean of 100 exact CRN evaluation keys",
+    "metrics": [
+      "throughput",
+      "unfinished",
+      "co2_kg",
+      "time_average_queue_vehicles",
+      "total_waiting_increment_s"
+    ],
+    "scenarios": [
+      "low",
+      "medium",
+      "oversaturated",
+      "asymmetric",
+      "pulse"
+    ],
+    "effect_orientation": "positive always favors framework; raw framework-actuated also retained",
+    "test": "two-sided paired Wilcoxon signed-rank on 10 training-seed means",
+    "holm_family": "all 5 scenarios x 5 metrics = 25 tests",
+    "bootstrap": {
+      "seed_level_resamples": 50000,
+      "hierarchical_resamples": 50000,
+      "percentile_ci": 0.95,
+      "seed_rng": 20261111,
+      "hierarchical_rng": 20261112,
+      "hierarchy": "resample training seeds and shared CRN episode keys"
+    },
+    "claim_rule": "Holm p<0.05 and both 95% CIs exclude zero",
+    "safety": "descriptive engineering audit versus fixed-cycle tolerances; no proportion test"
+  },
+  "tests": [
+    {
+      "scenario": "low",
+      "metric": "throughput",
+      "raw_mean_framework_minus_actuated": -1.01,
+      "oriented_mean_positive_framework_better": -1.01,
+      "oriented_std_across_training_seeds": 0.0,
+      "positive_seeds": 0,
+      "negative_seeds": 10,
+      "zero_seeds": 0,
+      "seed_bootstrap_ci95": [
+        -1.01,
+        -1.01
+      ],
+      "hierarchical_bootstrap_ci95": [
+        -1.27,
+        -0.74
+      ],
+      "wilcoxon_statistic": 0.0,
+      "p_raw": 0.001953125,
+      "wilcoxon_method": "exact",
+      "values_by_training_seed": {
+        "2026": -1.01,
+        "2027": -1.01,
+        "2028": -1.01,
+        "2029": -1.01,
+        "2030": -1.01,
+        "2101": -1.01,
+        "2102": -1.01,
+        "2103": -1.01,
+        "2104": -1.01,
+        "2105": -1.01
+      },
+      "p_holm_25": 0.048828125,
+      "holm_corrected_difference": true
+    },
+    {
+      "scenario": "low",
+      "metric": "unfinished",
+      "raw_mean_framework_minus_actuated": 1.01,
+      "oriented_mean_positive_framework_better": -1.01,
+      "oriented_std_across_training_seeds": 0.0,
+      "positive_seeds": 0,
+      "negative_seeds": 10,
+      "zero_seeds": 0,
+      "seed_bootstrap_ci95": [
+        -1.01,
+        -1.01
+      ],
+      "hierarchical_bootstrap_ci95": [
+        -1.27,
+        -0.74
+      ],
+      "wilcoxon_statistic": 0.0,
+      "p_raw": 0.001953125,
+      "wilcoxon_method": "exact",
+      "values_by_training_seed": {
+        "2026": -1.01,
+        "2027": -1.01,
+        "2028": -1.01,
+        "2029": -1.01,
+        "2030": -1.01,
+        "2101": -1.01,
+        "2102": -1.01,
+        "2103": -1.01,
+        "2104": -1.01,
+        "2105": -1.01
+      },
+      "p_holm_25": 0.048828125,
+      "holm_corrected_difference": true
+    },
+    {
+      "scenario": "low",
+      "metric": "co2_kg",
+      "raw_mean_framework_minus_actuated": 0.23248942477216455,
+      "oriented_mean_positive_framework_better": -0.23248942477216455,
+      "oriented_std_across_training_seeds": 0.00015352707265443055,
+      "positive_seeds": 0,
+      "negative_seeds": 10,
+      "zero_seeds": 0,
+      "seed_bootstrap_ci95": [
+        -0.23258938393323167,
+        -0.23243387504924895
+      ],
+      "hierarchical_bootstrap_ci95": [
+        -0.267991602574341,
+        -0.19737534925421282
+      ],
+      "wilcoxon_statistic": 0.0,
+      "p_raw": 0.001953125,
+      "wilcoxon_method": "exact",
+      "values_by_training_seed": {
+        "2026": -0.232406424199838,
+        "2027": -0.23292478714644715,
+        "2028": -0.23245812699866641,
+        "2029": -0.23244355848238485,
+        "2030": -0.23244355848238485,
+        "2101": -0.23244355848238485,
+        "2102": -0.23244355848238485,
+        "2103": -0.23244355848238485,
+        "2104": -0.23244355848238485,
+        "2105": -0.23244355848238485
+      },
+      "p_holm_25": 0.048828125,
+      "holm_corrected_difference": true
+    },
+    {
+      "scenario": "low",
+      "metric": "time_average_queue_vehicles",
+      "raw_mean_framework_minus_actuated": 1.0630633333333335,
+      "oriented_mean_positive_framework_better": -1.0630633333333335,
+      "oriented_std_across_training_seeds": 0.0003404608351145538,
+      "positive_seeds": 0,
+      "negative_seeds": 10,
+      "zero_seeds": 0,
+      "seed_bootstrap_ci95": [
+        -1.0632800000000002,
+        -1.0629133333333336
+      ],
+      "hierarchical_bootstrap_ci95": [
+        -1.1194404166666667,
+        -1.00586
+      ],
+      "wilcoxon_statistic": 0.0,
+      "p_raw": 0.001953125,
+      "wilcoxon_method": "exact",
+      "values_by_training_seed": {
+        "2026": -1.0628333333333333,
+        "2027": -1.0639666666666667,
+        "2028": -1.0633000000000001,
+        "2029": -1.0629333333333335,
+        "2030": -1.0629333333333335,
+        "2101": -1.0629333333333335,
+        "2102": -1.0629333333333335,
+        "2103": -1.0629333333333335,
+        "2104": -1.0629333333333335,
+        "2105": -1.0629333333333335
+      },
+      "p_holm_25": 0.048828125,
+      "holm_corrected_difference": true
+    },
+    {
+      "scenario": "low",
+      "metric": "total_waiting_increment_s",
+      "raw_mean_framework_minus_actuated": 318.919,
+      "oriented_mean_positive_framework_better": -318.919,
+      "oriented_std_across_training_seeds": 0.10213825053437206,
+      "positive_seeds": 0,
+      "negative_seeds": 10,
+      "zero_seeds": 0,
+      "seed_bootstrap_ci95": [
+        -318.98400000000004,
+        -318.874
+      ],
+      "hierarchical_bootstrap_ci95": [
+        -335.832125,
+        -301.758
+      ],
+      "wilcoxon_statistic": 0.0,
+      "p_raw": 0.001953125,
+      "wilcoxon_method": "exact",
+      "values_by_training_seed": {
+        "2026": -318.85,
+        "2027": -319.19,
+        "2028": -318.99,
+        "2029": -318.88,
+        "2030": -318.88,
+        "2101": -318.88,
+        "2102": -318.88,
+        "2103": -318.88,
+        "2104": -318.88,
+        "2105": -318.88
+      },
+      "p_holm_25": 0.048828125,
+      "holm_corrected_difference": true
+    },
+    {
+      "scenario": "medium",
+      "metric": "throughput",
+      "raw_mean_framework_minus_actuated": -1.0180000000000002,
+      "oriented_mean_positive_framework_better": -1.0180000000000002,
+      "oriented_std_across_training_seeds": 0.2457098559955081,
+      "positive_seeds": 0,
+      "negative_seeds": 10,
+      "zero_seeds": 0,
+      "seed_bootstrap_ci95": [
+        -1.173,
+        -0.884
+      ],
+      "hierarchical_bootstrap_ci95": [
+        -1.35,
+        -0.689
+      ],
+      "wilcoxon_statistic": 0.0,
+      "p_raw": 0.001953125,
+      "wilcoxon_method": "exact",
+      "values_by_training_seed": {
+        "2026": -1.09,
+        "2027": -0.89,
+        "2028": -0.86,
+        "2029": -1.47,
+        "2030": -0.74,
+        "2101": -0.9,
+        "2102": -0.83,
+        "2103": -0.92,
+        "2104": -1.07,
+        "2105": -1.41
+      },
+      "p_holm_25": 0.048828125,
+      "holm_corrected_difference": true
+    },
+    {
+      "scenario": "medium",
+      "metric": "unfinished",
+      "raw_mean_framework_minus_actuated": 1.0180000000000002,
+      "oriented_mean_positive_framework_better": -1.0180000000000002,
+      "oriented_std_across_training_seeds": 0.2457098559955081,
+      "positive_seeds": 0,
+      "negative_seeds": 10,
+      "zero_seeds": 0,
+      "seed_bootstrap_ci95": [
+        -1.173,
+        -0.884
+      ],
+      "hierarchical_bootstrap_ci95": [
+        -1.35,
+        -0.689
+      ],
+      "wilcoxon_statistic": 0.0,
+      "p_raw": 0.001953125,
+      "wilcoxon_method": "exact",
+      "values_by_training_seed": {
+        "2026": -1.09,
+        "2027": -0.89,
+        "2028": -0.86,
+        "2029": -1.47,
+        "2030": -0.74,
+        "2101": -0.9,
+        "2102": -0.83,
+        "2103": -0.92,
+        "2104": -1.07,
+        "2105": -1.41
+      },
+      "p_holm_25": 0.048828125,
+      "holm_corrected_difference": true
+    },
+    {
+      "scenario": "medium",
+      "metric": "co2_kg",
+      "raw_mean_framework_minus_actuated": 0.13392927537124338,
+      "oriented_mean_positive_framework_better": -0.13392927537124338,
+      "oriented_std_across_training_seeds": 0.05612945417379907,
+      "positive_seeds": 0,
+      "negative_seeds": 10,
+      "zero_seeds": 0,
+      "seed_bootstrap_ci95": [
+        -0.16956700839866873,
+        -0.10363773592040733
+      ],
+      "hierarchical_bootstrap_ci95": [
+        -0.19009492791655327,
+        -0.07929218152474925
+      ],
+      "wilcoxon_statistic": 0.0,
+      "p_raw": 0.001953125,
+      "wilcoxon_method": "exact",
+      "values_by_training_seed": {
+        "2026": -0.13342325016631806,
+        "2027": -0.12707329435881878,
+        "2028": -0.0901662558922742,
+        "2029": -0.23620221524868676,
+        "2030": -0.08316402186922729,
+        "2101": -0.08854872989446706,
+        "2102": -0.09181024356568174,
+        "2103": -0.11660735015901093,
+        "2104": -0.14274292853822618,
+        "2105": -0.22955446401972285
+      },
+      "p_holm_25": 0.048828125,
+      "holm_corrected_difference": true
+    },
+    {
+      "scenario": "medium",
+      "metric": "time_average_queue_vehicles",
+      "raw_mean_framework_minus_actuated": 1.05371,
+      "oriented_mean_positive_framework_better": -1.05371,
+      "oriented_std_across_training_seeds": 0.15210144766804828,
+      "positive_seeds": 0,
+      "negative_seeds": 10,
+      "zero_seeds": 0,
+      "seed_bootstrap_ci95": [
+        -1.1501867500000003,
+        -0.9711633333333335
+      ],
+      "hierarchical_bootstrap_ci95": [
+        -1.1622238333333335,
+        -0.9539499166666667
+      ],
+      "wilcoxon_statistic": 0.0,
+      "p_raw": 0.001953125,
+      "wilcoxon_method": "exact",
+      "values_by_training_seed": {
+        "2026": -1.0403666666666667,
+        "2027": -1.0257666666666667,
+        "2028": -0.9434,
+        "2029": -1.3205,
+        "2030": -0.9103333333333334,
+        "2101": -0.9383333333333335,
+        "2102": -0.9324000000000002,
+        "2103": -0.9955333333333334,
+        "2104": -1.1158333333333335,
+        "2105": -1.3146333333333333
+      },
+      "p_holm_25": 0.048828125,
+      "holm_corrected_difference": true
+    },
+    {
+      "scenario": "medium",
+      "metric": "total_waiting_increment_s",
+      "raw_mean_framework_minus_actuated": 316.11299999999994,
+      "oriented_mean_positive_framework_better": -316.11299999999994,
+      "oriented_std_across_training_seeds": 45.63043430041449,
+      "positive_seeds": 0,
+      "negative_seeds": 10,
+      "zero_seeds": 0,
+      "seed_bootstrap_ci95": [
+        -345.056025,
+        -291.34900000000005
+      ],
+      "hierarchical_bootstrap_ci95": [
+        -348.66715,
+        -286.184975
+      ],
+      "wilcoxon_statistic": 0.0,
+      "p_raw": 0.001953125,
+      "wilcoxon_method": "exact",
+      "values_by_training_seed": {
+        "2026": -312.11,
+        "2027": -307.73,
+        "2028": -283.02,
+        "2029": -396.15,
+        "2030": -273.1,
+        "2101": -281.5,
+        "2102": -279.72,
+        "2103": -298.66,
+        "2104": -334.75,
+        "2105": -394.39
+      },
+      "p_holm_25": 0.048828125,
+      "holm_corrected_difference": true
+    },
+    {
+      "scenario": "oversaturated",
+      "metric": "throughput",
+      "raw_mean_framework_minus_actuated": -1.579,
+      "oriented_mean_positive_framework_better": -1.579,
+      "oriented_std_across_training_seeds": 0.4387722770539533,
+      "positive_seeds": 0,
+      "negative_seeds": 10,
+      "zero_seeds": 0,
+      "seed_bootstrap_ci95": [
+        -1.8199999999999998,
+        -1.3050000000000002
+      ],
+      "hierarchical_bootstrap_ci95": [
+        -2.013,
+        -1.156
+      ],
+      "wilcoxon_statistic": 0.0,
+      "p_raw": 0.001953125,
+      "wilcoxon_method": "exact",
+      "values_by_training_seed": {
+        "2026": -2.06,
+        "2027": -1.39,
+        "2028": -1.15,
+        "2029": -1.94,
+        "2030": -0.67,
+        "2101": -1.47,
+        "2102": -1.73,
+        "2103": -1.86,
+        "2104": -2.03,
+        "2105": -1.49
+      },
+      "p_holm_25": 0.048828125,
+      "holm_corrected_difference": true
+    },
+    {
+      "scenario": "oversaturated",
+      "metric": "unfinished",
+      "raw_mean_framework_minus_actuated": 1.579,
+      "oriented_mean_positive_framework_better": -1.579,
+      "oriented_std_across_training_seeds": 0.4387722770539533,
+      "positive_seeds": 0,
+      "negative_seeds": 10,
+      "zero_seeds": 0,
+      "seed_bootstrap_ci95": [
+        -1.8199999999999998,
+        -1.3050000000000002
+      ],
+      "hierarchical_bootstrap_ci95": [
+        -2.013,
+        -1.156
+      ],
+      "wilcoxon_statistic": 0.0,
+      "p_raw": 0.001953125,
+      "wilcoxon_method": "exact",
+      "values_by_training_seed": {
+        "2026": -2.06,
+        "2027": -1.39,
+        "2028": -1.15,
+        "2029": -1.94,
+        "2030": -0.67,
+        "2101": -1.47,
+        "2102": -1.73,
+        "2103": -1.86,
+        "2104": -2.03,
+        "2105": -1.49
+      },
+      "p_holm_25": 0.048828125,
+      "holm_corrected_difference": true
+    },
+    {
+      "scenario": "oversaturated",
+      "metric": "co2_kg",
+      "raw_mean_framework_minus_actuated": 0.30979678972538477,
+      "oriented_mean_positive_framework_better": -0.30979678972538477,
+      "oriented_std_across_training_seeds": 0.07003293444893606,
+      "positive_seeds": 0,
+      "negative_seeds": 10,
+      "zero_seeds": 0,
+      "seed_bootstrap_ci95": [
+        -0.34910142916844256,
+        -0.26720603597399417
+      ],
+      "hierarchical_bootstrap_ci95": [
+        -0.37709982707568324,
+        -0.24337531956066166
+      ],
+      "wilcoxon_statistic": 0.0,
+      "p_raw": 0.001953125,
+      "wilcoxon_method": "exact",
+      "values_by_training_seed": {
+        "2026": -0.31912299726395416,
+        "2027": -0.2500486243208032,
+        "2028": -0.3196926595107786,
+        "2029": -0.3721236844816789,
+        "2030": -0.17906674592675337,
+        "2101": -0.3613815705080798,
+        "2102": -0.3443940355852512,
+        "2103": -0.2948754665953875,
+        "2104": -0.4141345863568871,
+        "2105": -0.2431275267042738
+      },
+      "p_holm_25": 0.048828125,
+      "holm_corrected_difference": true
+    },
+    {
+      "scenario": "oversaturated",
+      "metric": "time_average_queue_vehicles",
+      "raw_mean_framework_minus_actuated": 1.371493333333333,
+      "oriented_mean_positive_framework_better": -1.371493333333333,
+      "oriented_std_across_training_seeds": 0.23173732511585574,
+      "positive_seeds": 0,
+      "negative_seeds": 10,
+      "zero_seeds": 0,
+      "seed_bootstrap_ci95": [
+        -1.4936981666666667,
+        -1.22269
+      ],
+      "hierarchical_bootstrap_ci95": [
+        -1.5137001666666667,
+        -1.21065625
+      ],
+      "wilcoxon_statistic": 0.0,
+      "p_raw": 0.001953125,
+      "wilcoxon_method": "exact",
+      "values_by_training_seed": {
+        "2026": -1.4923333333333335,
+        "2027": -1.2135,
+        "2028": -1.438733333333333,
+        "2029": -1.5369333333333333,
+        "2030": -0.8348,
+        "2101": -1.3517666666666668,
+        "2102": -1.5006999999999997,
+        "2103": -1.4242333333333332,
+        "2104": -1.6706666666666665,
+        "2105": -1.2512666666666667
+      },
+      "p_holm_25": 0.048828125,
+      "holm_corrected_difference": true
+    },
+    {
+      "scenario": "oversaturated",
+      "metric": "total_waiting_increment_s",
+      "raw_mean_framework_minus_actuated": 411.446,
+      "oriented_mean_positive_framework_better": -411.446,
+      "oriented_std_across_training_seeds": 69.5245283974576,
+      "positive_seeds": 0,
+      "negative_seeds": 10,
+      "zero_seeds": 0,
+      "seed_bootstrap_ci95": [
+        -448.10945000000004,
+        -366.802
+      ],
+      "hierarchical_bootstrap_ci95": [
+        -454.11,
+        -363.1968
+      ],
+      "wilcoxon_statistic": 0.0,
+      "p_raw": 0.001953125,
+      "wilcoxon_method": "exact",
+      "values_by_training_seed": {
+        "2026": -447.7,
+        "2027": -364.04,
+        "2028": -431.62,
+        "2029": -461.08,
+        "2030": -250.43,
+        "2101": -405.53,
+        "2102": -450.21,
+        "2103": -427.27,
+        "2104": -501.2,
+        "2105": -375.38
+      },
+      "p_holm_25": 0.048828125,
+      "holm_corrected_difference": true
+    },
+    {
+      "scenario": "asymmetric",
+      "metric": "throughput",
+      "raw_mean_framework_minus_actuated": -2.851,
+      "oriented_mean_positive_framework_better": -2.851,
+      "oriented_std_across_training_seeds": 0.8302670253197663,
+      "positive_seeds": 0,
+      "negative_seeds": 10,
+      "zero_seeds": 0,
+      "seed_bootstrap_ci95": [
+        -3.321,
+        -2.348
+      ],
+      "hierarchical_bootstrap_ci95": [
+        -3.514,
+        -2.238
+      ],
+      "wilcoxon_statistic": 0.0,
+      "p_raw": 0.001953125,
+      "wilcoxon_method": "exact",
+      "values_by_training_seed": {
+        "2026": -2.85,
+        "2027": -3.24,
+        "2028": -3.86,
+        "2029": -3.29,
+        "2030": -1.76,
+        "2101": -3.86,
+        "2102": -3.21,
+        "2103": -2.96,
+        "2104": -1.63,
+        "2105": -1.85
+      },
+      "p_holm_25": 0.048828125,
+      "holm_corrected_difference": true
+    },
+    {
+      "scenario": "asymmetric",
+      "metric": "unfinished",
+      "raw_mean_framework_minus_actuated": 2.851,
+      "oriented_mean_positive_framework_better": -2.851,
+      "oriented_std_across_training_seeds": 0.8302670253197663,
+      "positive_seeds": 0,
+      "negative_seeds": 10,
+      "zero_seeds": 0,
+      "seed_bootstrap_ci95": [
+        -3.321,
+        -2.348
+      ],
+      "hierarchical_bootstrap_ci95": [
+        -3.514,
+        -2.238
+      ],
+      "wilcoxon_statistic": 0.0,
+      "p_raw": 0.001953125,
+      "wilcoxon_method": "exact",
+      "values_by_training_seed": {
+        "2026": -2.85,
+        "2027": -3.24,
+        "2028": -3.86,
+        "2029": -3.29,
+        "2030": -1.76,
+        "2101": -3.86,
+        "2102": -3.21,
+        "2103": -2.96,
+        "2104": -1.63,
+        "2105": -1.85
+      },
+      "p_holm_25": 0.048828125,
+      "holm_corrected_difference": true
+    },
+    {
+      "scenario": "asymmetric",
+      "metric": "co2_kg",
+      "raw_mean_framework_minus_actuated": 0.8740923953346889,
+      "oriented_mean_positive_framework_better": -0.8740923953346889,
+      "oriented_std_across_training_seeds": 0.132878721988404,
+      "positive_seeds": 0,
+      "negative_seeds": 10,
+      "zero_seeds": 0,
+      "seed_bootstrap_ci95": [
+        -0.9492461725598914,
+        -0.7942467266436782
+      ],
+      "hierarchical_bootstrap_ci95": [
+        -0.962640550749675,
+        -0.784658955995953
+      ],
+      "wilcoxon_statistic": 0.0,
+      "p_raw": 0.001953125,
+      "wilcoxon_method": "exact",
+      "values_by_training_seed": {
+        "2026": -0.8863523561891469,
+        "2027": -0.9406808337780962,
+        "2028": -1.0407250724038755,
+        "2029": -0.9467802677634808,
+        "2030": -0.6505927899787645,
+        "2101": -1.0343741990505444,
+        "2102": -0.9394514039964106,
+        "2103": -0.8360051758002726,
+        "2104": -0.7263918911634287,
+        "2105": -0.7395699632228685
+      },
+      "p_holm_25": 0.048828125,
+      "holm_corrected_difference": true
+    },
+    {
+      "scenario": "asymmetric",
+      "metric": "time_average_queue_vehicles",
+      "raw_mean_framework_minus_actuated": 2.089306666666667,
+      "oriented_mean_positive_framework_better": -2.089306666666667,
+      "oriented_std_across_training_seeds": 0.3060831141865286,
+      "positive_seeds": 0,
+      "negative_seeds": 10,
+      "zero_seeds": 0,
+      "seed_bootstrap_ci95": [
+        -2.264210666666667,
+        -1.9073882500000001
+      ],
+      "hierarchical_bootstrap_ci95": [
+        -2.2747177499999998,
+        -1.8997860833333333
+      ],
+      "wilcoxon_statistic": 0.0,
+      "p_raw": 0.001953125,
+      "wilcoxon_method": "exact",
+      "values_by_training_seed": {
+        "2026": -2.0781666666666667,
+        "2027": -2.2336,
+        "2028": -2.4915000000000003,
+        "2029": -2.2603999999999997,
+        "2030": -1.5580333333333332,
+        "2101": -2.4847,
+        "2102": -2.1910666666666665,
+        "2103": -1.9898000000000002,
+        "2104": -1.7384666666666666,
+        "2105": -1.8673333333333335
+      },
+      "p_holm_25": 0.048828125,
+      "holm_corrected_difference": true
+    },
+    {
+      "scenario": "asymmetric",
+      "metric": "total_waiting_increment_s",
+      "raw_mean_framework_minus_actuated": 626.792,
+      "oriented_mean_positive_framework_better": -626.792,
+      "oriented_std_across_training_seeds": 91.82493425595857,
+      "positive_seeds": 0,
+      "negative_seeds": 10,
+      "zero_seeds": 0,
+      "seed_bootstrap_ci95": [
+        -679.2632,
+        -572.216475
+      ],
+      "hierarchical_bootstrap_ci95": [
+        -682.4153249999999,
+        -569.935825
+      ],
+      "wilcoxon_statistic": 0.0,
+      "p_raw": 0.001953125,
+      "wilcoxon_method": "exact",
+      "values_by_training_seed": {
+        "2026": -623.45,
+        "2027": -670.08,
+        "2028": -747.45,
+        "2029": -678.12,
+        "2030": -467.41,
+        "2101": -745.41,
+        "2102": -657.32,
+        "2103": -596.94,
+        "2104": -521.54,
+        "2105": -560.2
+      },
+      "p_holm_25": 0.048828125,
+      "holm_corrected_difference": true
+    },
+    {
+      "scenario": "pulse",
+      "metric": "throughput",
+      "raw_mean_framework_minus_actuated": -0.43,
+      "oriented_mean_positive_framework_better": -0.43,
+      "oriented_std_across_training_seeds": 0.0,
+      "positive_seeds": 0,
+      "negative_seeds": 10,
+      "zero_seeds": 0,
+      "seed_bootstrap_ci95": [
+        -0.43,
+        -0.43
+      ],
+      "hierarchical_bootstrap_ci95": [
+        -0.63,
+        -0.25
+      ],
+      "wilcoxon_statistic": 0.0,
+      "p_raw": 0.001953125,
+      "wilcoxon_method": "exact",
+      "values_by_training_seed": {
+        "2026": -0.43,
+        "2027": -0.43,
+        "2028": -0.43,
+        "2029": -0.43,
+        "2030": -0.43,
+        "2101": -0.43,
+        "2102": -0.43,
+        "2103": -0.43,
+        "2104": -0.43,
+        "2105": -0.43
+      },
+      "p_holm_25": 0.048828125,
+      "holm_corrected_difference": true
+    },
+    {
+      "scenario": "pulse",
+      "metric": "unfinished",
+      "raw_mean_framework_minus_actuated": 0.43,
+      "oriented_mean_positive_framework_better": -0.43,
+      "oriented_std_across_training_seeds": 0.0,
+      "positive_seeds": 0,
+      "negative_seeds": 10,
+      "zero_seeds": 0,
+      "seed_bootstrap_ci95": [
+        -0.43,
+        -0.43
+      ],
+      "hierarchical_bootstrap_ci95": [
+        -0.63,
+        -0.25
+      ],
+      "wilcoxon_statistic": 0.0,
+      "p_raw": 0.001953125,
+      "wilcoxon_method": "exact",
+      "values_by_training_seed": {
+        "2026": -0.43,
+        "2027": -0.43,
+        "2028": -0.43,
+        "2029": -0.43,
+        "2030": -0.43,
+        "2101": -0.43,
+        "2102": -0.43,
+        "2103": -0.43,
+        "2104": -0.43,
+        "2105": -0.43
+      },
+      "p_holm_25": 0.048828125,
+      "holm_corrected_difference": true
+    },
+    {
+      "scenario": "pulse",
+      "metric": "co2_kg",
+      "raw_mean_framework_minus_actuated": 0.0003483476733198687,
+      "oriented_mean_positive_framework_better": -0.0003483476733198687,
+      "oriented_std_across_training_seeds": 0.0,
+      "positive_seeds": 0,
+      "negative_seeds": 10,
+      "zero_seeds": 0,
+      "seed_bootstrap_ci95": [
+        -0.0003483476733198687,
+        -0.0003483476733198687
+      ],
+      "hierarchical_bootstrap_ci95": [
+        -0.004471904490404271,
+        0.003906487734603849
+      ],
+      "wilcoxon_statistic": 0.0,
+      "p_raw": 0.001953125,
+      "wilcoxon_method": "exact",
+      "values_by_training_seed": {
+        "2026": -0.0003483476733198687,
+        "2027": -0.0003483476733198687,
+        "2028": -0.0003483476733198687,
+        "2029": -0.0003483476733198687,
+        "2030": -0.0003483476733198687,
+        "2101": -0.0003483476733198687,
+        "2102": -0.0003483476733198687,
+        "2103": -0.0003483476733198687,
+        "2104": -0.0003483476733198687,
+        "2105": -0.0003483476733198687
+      },
+      "p_holm_25": 0.048828125,
+      "holm_corrected_difference": false
+    },
+    {
+      "scenario": "pulse",
+      "metric": "time_average_queue_vehicles",
+      "raw_mean_framework_minus_actuated": 0.04406666666666666,
+      "oriented_mean_positive_framework_better": -0.04406666666666666,
+      "oriented_std_across_training_seeds": 7.314236392868128e-18,
+      "positive_seeds": 0,
+      "negative_seeds": 10,
+      "zero_seeds": 0,
+      "seed_bootstrap_ci95": [
+        -0.04406666666666666,
+        -0.04406666666666666
+      ],
+      "hierarchical_bootstrap_ci95": [
+        -0.06200083333333333,
+        -0.02776666666666667
+      ],
+      "wilcoxon_statistic": 0.0,
+      "p_raw": 0.001953125,
+      "wilcoxon_method": "exact",
+      "values_by_training_seed": {
+        "2026": -0.044066666666666664,
+        "2027": -0.044066666666666664,
+        "2028": -0.044066666666666664,
+        "2029": -0.044066666666666664,
+        "2030": -0.044066666666666664,
+        "2101": -0.044066666666666664,
+        "2102": -0.044066666666666664,
+        "2103": -0.044066666666666664,
+        "2104": -0.044066666666666664,
+        "2105": -0.044066666666666664
+      },
+      "p_holm_25": 0.048828125,
+      "holm_corrected_difference": true
+    },
+    {
+      "scenario": "pulse",
+      "metric": "total_waiting_increment_s",
+      "raw_mean_framework_minus_actuated": 13.220000000000002,
+      "oriented_mean_positive_framework_better": -13.220000000000002,
+      "oriented_std_across_training_seeds": 1.8724445165742407e-15,
+      "positive_seeds": 0,
+      "negative_seeds": 10,
+      "zero_seeds": 0,
+      "seed_bootstrap_ci95": [
+        -13.220000000000002,
+        -13.220000000000002
+      ],
+      "hierarchical_bootstrap_ci95": [
+        -18.60025,
+        -8.33
+      ],
+      "wilcoxon_statistic": 0.0,
+      "p_raw": 0.001953125,
+      "wilcoxon_method": "exact",
+      "values_by_training_seed": {
+        "2026": -13.22,
+        "2027": -13.22,
+        "2028": -13.22,
+        "2029": -13.22,
+        "2030": -13.22,
+        "2101": -13.22,
+        "2102": -13.22,
+        "2103": -13.22,
+        "2104": -13.22,
+        "2105": -13.22
+      },
+      "p_holm_25": 0.048828125,
+      "holm_corrected_difference": true
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+net_file: nets/2way-single-intersection/single-intersection.net.xml
+route_file: nets/2way-single-intersection/f1-low.rou.xml
+skip_range: 5
+simulation_time: 600
+yellow_time: 2
+delta_rs_update_time: 10
+use_gui: false
+sumo_seed: 2026

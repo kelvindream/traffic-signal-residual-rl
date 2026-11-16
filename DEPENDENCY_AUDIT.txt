@@ -1,0 +1,60 @@
+Audited entry points
+====================
+
+1. tools/train_eval_fixed_prior_ctde.py
+   Local dependency closure:
+   - agents/agent_config.py
+   - agents/fixed_prior_ctde.py
+   - environment/async_mult_intersection_env.py
+   - environment/traffic_signal.py
+   - tools/e6_flow_profiles.py
+   - tools/eval_enhanced_actuated_r1.py
+   - agents/adaptive_max_green.py
+   - agents/enhanced_actuated.py
+   - agents/rule_coordination.py
+   - nets/2x2-grid/2x2.net.xml
+   - five route files listed in tools/eval_enhanced_actuated_r1.py
+
+   Restored canonical dependency:
+   - utils/metrics_schema.py
+
+   The schema constants and CSV writer are constrained by the included unit tests
+   and match the archived train, evaluation, paired, and intermediate CSV headers.
+
+2. tools/analyze_e11_n10.py
+   Python dependencies: numpy, scipy.
+   Data closure included:
+   - results/formal_v2/rule_baselines/all_metrics.csv
+   - results/formal_v2/{ctde_300,ctde_300_n10}/<scenario>_seed*/eval_metrics.csv
+   - results/formal_v2/{hdrl_300,hdrl_300_n10}/<scenario>_seed*/eval_metrics.csv
+
+3. tools/analyze_e12_n10.py
+   Python dependencies: numpy, scipy.
+   Data closure included:
+   - E11 CTDE CSV inputs listed above
+   - results/e12_colight/<scenario>_seed*/eval_metrics.csv
+   - results/formal_v2/rule_baselines/all_metrics.csv
+
+4. paper/figures/make_figures.py
+   Python dependencies: matplotlib, numpy.
+   Data closure included:
+   - results/formal_v2/e4_n10_statistics.json
+   - results/formal_v2/e7_tail_risk.json
+   - results/formal_v2/residual_improvement_full/analysis.json
+   - results/formal_v2/e5_ablation/analysis.json
+   - results/formal_v2/e8_convergence_full.json
+
+External runtime dependencies
+=============================
+
+- Eclipse SUMO binary and SUMO_HOME for simulation.
+- traci and sumolib Python packages.
+- PyTorch for the CTDE agent.
+- gym for environment spaces.
+
+Packaging-environment limitations
+=================================
+
+- The SUMO binary was not available, so simulator execution was not tested.
+- The packaging interpreter was Python 3.14.7; the recommended reproduction
+  environment is Python 3.10/3.11 for compatibility with pinned packages.

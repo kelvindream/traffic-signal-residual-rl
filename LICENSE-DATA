@@ -1,0 +1,20 @@
+Data and figure license notice
+
+Copyright (c) 2026 Rongtao Zhu
+
+Except for separately identified third-party material, the original statistical
+data and generated figures in results/ and the PDF/PNG figures in paper/figures/
+are licensed under the Creative Commons Attribution 4.0 International license
+(SPDX-License-Identifier: CC-BY-4.0).
+
+License and summary: https://creativecommons.org/licenses/by/4.0/
+Governing legal code: https://creativecommons.org/licenses/by/4.0/legalcode
+
+For attribution, credit Rongtao Zhu, identify this reproducibility package,
+provide its repository URL and a link to the license, and indicate changes.
+Repository: https://github.com/kelvindream/traffic-signal-residual-rl
+
+This notice does not relicense third-party materials or dependencies. Any
+separately identified third-party terms remain applicable. Source code,
+supporting configurations, and documentation authored for this package are
+covered by the MIT license in LICENSE, not by this data license.
