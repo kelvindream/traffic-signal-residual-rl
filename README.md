@@ -6,13 +6,13 @@ Creator: Rongtao Zhu (ORCID: 0009-0000-4528-5714), Yangtze University College of
 
 Repository: https://github.com/kelvindream/traffic-signal-residual-rl
 
+DOI: [10.5281/zenodo.24302636](https://doi.org/10.5281/zenodo.24302636) (Zenodo archive of the v1.0.1 release)
+
 ## Licensing
 
 - Original source code, supporting configurations, and documentation: MIT, see `LICENSE`.
 - Original statistical data and generated figures under `results/`, and PDF/PNG figures under `paper/figures/`: CC BY 4.0, see `LICENSE-DATA`.
 - Third-party materials and dependencies retain their own licenses; neither license above overrides separately applicable third-party terms.
-
-The repository is not yet a published Zenodo archive. Do not cite the DOI reserved for the separate manual-upload draft as the DOI of this GitHub release.
 
 ## Contents
 
