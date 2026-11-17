@@ -1,5 +1,8 @@
 DEPENDENCY_AUDIT.txt	2164
-README.md	5400
+.zenodo.json	1404
+LICENSE	1068
+LICENSE-DATA	994
+README.md	6251
 agents/__init__.py	0
 agents/adaptive_max_green.py	2740
 agents/agent_config.py	13938

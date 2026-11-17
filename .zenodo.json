@@ -1,0 +1,24 @@
+{
+  "title": "Traffic Signal Residual RL: Reproducibility Package",
+  "upload_type": "software",
+  "creators": [
+    {
+      "name": "Zhu, Rongtao",
+      "orcid": "0009-0000-4528-5714",
+      "affiliation": "Yangtze University College of Arts and Sciences"
+    }
+  ],
+  "description": "<p>Reproducibility package for the paper \"Auditing Safety-Constrained Residual Reinforcement Learning for Multi-Intersection Traffic Signal Control: Fixed-Time Gains and Actuated-Control Limits\". Contains the core CTDE agent code, SUMO environment and 2x2-grid network with five demand scenarios, E11/E12/E13 statistical recomputation scripts, compact per-run evaluation CSVs, and figure regeneration scripts. Model checkpoints, replay buffers, large raw trajectories, and manuscript source are intentionally excluded.</p><p>Licensing: original source code, supporting configurations, and documentation are released under the MIT license (see LICENSE); original statistical data under results/ and generated figures under paper/figures/ are released under CC BY 4.0 (see LICENSE-DATA). Third-party materials and dependencies retain their own licenses.</p>",
+  "access_right": "open",
+  "license": "mit",
+  "keywords": [
+    "traffic signal control",
+    "reinforcement learning",
+    "safety constraints",
+    "residual learning",
+    "SUMO",
+    "reproducibility"
+  ],
+  "language": "eng",
+  "version": "v1.0.0"
+}
